@@ -445,4 +445,16 @@ footer p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-  
+/* Fondos más suaves para secciones principales */
+.inicio,
+.galeria,
+.sobre-mi {
+  background: linear-gradient(
+    135deg,
+    rgba(233, 75, 126, 0.2),   /* rosa muy suave */
+    rgba(240, 124, 62, 0.2),   /* naranja */
+    rgba(252, 187, 54, 0.2),   /* amarillo */
+    rgba(0, 160, 161, 0.2),    /* turquesa */
+    rgba(109, 44, 125, 0.2)    /* morado */
+  );
+}
