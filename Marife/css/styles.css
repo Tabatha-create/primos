@@ -446,15 +446,41 @@ footer p {
 }
 
 /* Fondos más suaves para secciones principales */
-.inicio,
+main {
+  background: linear-gradient(
+    250deg,
+    rgba(233, 75, 126, 0.2),
+    rgba(240, 124, 62, 0.2),
+    rgba(252, 187, 54, 0.2),
+    rgba(0, 160, 161, 0.2),
+    rgba(109, 44, 125, 0.2)
+  );
+  margin: 0;
+  padding: 0;
+}
+
+/* Hacer las secciones transparentes */
+.hero,
 .galeria,
 .sobre-mi {
-  background: linear-gradient(
-    135deg,
-    rgba(233, 75, 126, 0.2),   /* rosa muy suave */
-    rgba(240, 124, 62, 0.2),   /* naranja */
-    rgba(252, 187, 54, 0.2),   /* amarillo */
-    rgba(0, 160, 161, 0.2),    /* turquesa */
-    rgba(109, 44, 125, 0.2)    /* morado */
-  );
+  background: transparent !important;
+  margin: 0;
 }
+/* Importar fuentes creativas desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&display=swap');
+
+/* Aplicar fuente principal al body */
+body {
+  font-family: 'Fredoka', 'Baloo 2', sans-serif;
+}
+
+/* Títulos principales con fuente más divertida */
+h1, h2, h3 {
+  font-family: 'Lilita One', 'Fredoka', cursive;
+}
+
+/* Alternativa: Si prefieres algo más redondeado y suave */
+h4, p {
+  font-family: 'Bubblegum Sans', 'Fredoka', cursive;
+}
+
