@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piñatas Marife</title>
-    <link rel="stylesheet" href=css/estilos.css>
+    <link rel="stylesheet" href=css/estilo.css>
     <link rel="icon" type="image/png" sizes="32x32" href="pinatas-marife-favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -42,32 +42,70 @@
                     <div class="columnas">
                         <h2>Origen</h2>
                         <img class="iconos" src="img/histmini.png" alt="Icono de Historia"></img>
-                        <p>El origen de las Piñatas de acuerdo con Marco Polo, se encuentra en China y en su forma original representaban animales, un ritual para recibir a la Primavera. De ahí, la tradición viajó a Italia donde adoptó el nombre de <strong>Pignatas</strong> y fue desde donde se difundió al resto de Europa. <br>A raíz de ello, llegó a España y como consecuencia a México (Nueva España) en la época de la conquista, en donde los frailes la utilizaron como herramienta de evangelización. <br> Existen indicios de que en Mesoamérica había tradiciones similares para celebrar al dios Huitzilopochtli: acostumbraban romper recipientes de barro rellenos de cacao y llenaban cazuelas de barro con tesoros y alhajas que decoraban y las rompían durante las festividades. <br> Aunque ha perdido su carácter religioso, la piñata sigue siendo una parte importante en la cultura latina. Es un símbolo de alegría y celebración que reúne a personas de todas las edades para compartir la diversión en cualquier evento que se celebre.</p>
+                        <div class="texto-expandible">
+                        <p class="texto-resumen">
+                            El origen de las Piñatas de acuerdo con Marco Polo, se encuentra en China y en su forma original representaban animales, un ritual para recibir a la Primavera. De ahí, la tradición viajó a Italia donde adoptó el nombre de <strong>Pignatas</strong> y fue desde donde se difundió al resto de Europa...
+                            <span class="btn-expandir" onclick="expandirTexto(this)">ver más</span>
+                        </p>
+                        <p class="texto-completo oculto">
+                            El origen de las Piñatas de acuerdo con Marco Polo, se encuentra en China y en su forma original representaban animales, un ritual para recibir a la Primavera. De ahí, la tradición viajó a Italia donde adoptó el nombre de <strong>Pignatas</strong> y fue desde donde se difundió al resto de Europa. <br><br>
+                            A raíz de ello, llegó a España y como consecuencia a México (Nueva España) en la época de la conquista, en donde los frailes la utilizaron como herramienta de evangelización. <br><br>
+                            Existen indicios de que en Mesoamérica había tradiciones similares para celebrar al dios Huitzilopochtli: acostumbraban romper recipientes de barro rellenos de cacao y llenaban cazuelas de barro con tesoros y alhajas que decoraban y las rompían durante las festividades. <br><br>
+                            Aunque ha perdido su carácter religioso, la piñata sigue siendo una parte importante en la cultura latina. Es un símbolo de alegría y celebración que reúne a personas de todas las edades para compartir la diversión en cualquier evento que se celebre.
+                            <span class="btn-contraer" onclick="contraerTexto(this)">ver menos</span>
+                        </p>
+                    </div>
                     </div>
  <br>
                     <div class="columnas">
                         <h2>Simbolismo</h2>
                         <img class="iconos" src="img/Simbolmini.png" alt="Icono de Simbolismo"></img> 
-                        <ul><li>Los siete picos representan los <strong>pecados capitales:</strong>
-                            <ol><em>Soberbia:</em> Sentimientos de superioridad que llevan al desprecio por los demás. <br>
-                            <em>Avaricia:</em> Deseo obsesivo de acumular riquezas sin compartir con los demás. <br>
-                            <em>Lujuria:</em> Anhelo morboso y sexual hacia otras personas. <br>
-                            <em>Ira:</em> Furia y violencia, la disposición a hacer el mal sin consideración. <br>
-                            <em>Gula:</em> Consumir en exceso sin considerar las necesidades de los demás. <br>
-                            <em>Envidia:</em> Rabia por poseer menos que otros. <br>
-                            <em>Pereza:</em> La negligencia y falta de acción por comodidad.
-                            </ol></li>
-                    <li>Sus <em>brillantes colores:</em> simbolizan la tentación. <br>
-                    <em>Venda en los ojos:</em> recuerda que la fe es ciega. <br>
-                    <em>Palo con el que se rompe</em> la piñata: es la fuerza y la virtud que destruyen los engaños y pecados. <br>                    
-                    <em>Dulces, golosinas y juguetes:</em> son las riquezas del reino que se otorgan como premio a la fe y la perseverancia.</li>
-                    </ul>
+                        <div class="texto-expandible">
+                        <div class="texto-resumen">
+                            <ul>
+                                <li>Los siete picos representan los <strong>pecados capitales:</strong> Soberbia, Avaricia, Lujuria, Ira, Gula, Envidia y Pereza...</li>
+                            </ul>
+                            <span class="btn-expandir" onclick="expandirTexto(this)">ver más</span>
+                        </div>
+                        <div class="texto-completo oculto">
+                            <ul>
+                                <li>Los siete picos representan los <strong>pecados capitales:</strong>
+                                    <ol>
+                                        <li><em>Soberbia:</em> Sentimientos de superioridad que llevan al desprecio por los demás.</li>
+                                        <li><em>Avaricia:</em> Deseo obsesivo de acumular riquezas sin compartir con los demás.</li>
+                                        <li><em>Lujuria:</em> Anhelo morboso y sexual hacia otras personas.</li>
+                                        <li><em>Ira:</em> Furia y violencia, la disposición a hacer el mal sin consideración.</li>
+                                        <li><em>Gula:</em> Consumir en exceso sin considerar las necesidades de los demás.</li>
+                                        <li><em>Envidia:</em> Rabia por poseer menos que otros.</li>
+                                        <li><em>Pereza:</em> La negligencia y falta de acción por comodidad.</li>
+                                    </ol>
+                                </li>
+                                <li>Sus <em>brillantes colores:</em> simbolizan la tentación.</li>
+                                <li><em>Venda en los ojos:</em> recuerda que la fe es ciega.</li>
+                                <li><em>Palo con el que se rompe</em> la piñata: es la fuerza y la virtud que destruyen los engaños y pecados.</li>
+                                <li><em>Dulces, golosinas y juguetes:</em> son las riquezas del reino que se otorgan como premio a la fe y la perseverancia.</li>
+                            </ul>
+                            <span class="btn-contraer" onclick="contraerTexto(this)">ver menos</span>
+                        </div>
+                    </div>
                     </div>
  <br>
                     <div class="columnas">
                     <h2>Conclusión</h2>
                     <img class="iconos" src="img/celebmini.jpg" alt="Icono conclusión"></img>
-                    <p>Las piñatas han derribado todas las barreras y trascendido fronteras, se han convertido en una tradición querida en todo el mundo. Ya sea en fiestas infantiles, cumpleaños, eventos temáticos o celebraciones de cualquier tipo. <br> Agregan un toque especial de emoción y alegría. <br> La piñata se ata al final de una polea simple fija que es controlada por una persona que ajusta la altura soltando o recogiendo el cable o la cuerda para tratar de que la persona en turno golpee la piñata para tratar de reventarla. <br> Disfruta de la diversión y sumérgete en el mundo de las piñatas rompiendo y celebrando con una hermosa piñata llena de color y sorpresas.</p>
+                    <div class="texto-expandible">
+                        <p class="texto-resumen">
+                            Las piñatas han derribado todas las barreras y trascendido fronteras, se han convertido en una tradición querida en todo el mundo. Ya sea en fiestas infantiles, cumpleaños, eventos temáticos o celebraciones de cualquier tipo...
+                            <span class="btn-expandir" onclick="expandirTexto(this)">ver más</span>
+                        </p>
+                        <p class="texto-completo oculto">
+                            Las piñatas han derribado todas las barreras y trascendido fronteras, se han convertido en una tradición querida en todo el mundo. Ya sea en fiestas infantiles, cumpleaños, eventos temáticos o celebraciones de cualquier tipo. <br><br>
+                            Agregan un toque especial de emoción y alegría. <br><br>
+                            La piñata se ata al final de una polea simple fija que es controlada por una persona que ajusta la altura soltando o recogiendo el cable o la cuerda para tratar de que la persona en turno golpee la piñata para tratar de reventarla. <br><br>
+                            Disfruta de la diversión y sumérgete en el mundo de las piñatas rompiendo y celebrando con una hermosa piñata llena de color y sorpresas.
+                            <span class="btn-contraer" onclick="contraerTexto(this)">ver menos</span>
+                        </p>
+                    </div>
                     </div>
                 </section>
             </div>
@@ -83,7 +121,7 @@
                     <img src="img/Mashamini.jpg" alt="Masha" class="thumbnail" data-full="img/Masha.jpg">
                 </div>
                 <div class="card">
-                    <img src="img/jarramini.jpg" alt="Jarra cerveza" class="thumbnail" data-full="jarra.jpg">
+                    <img src="img/jarramini.jpg" alt="Jarra cerveza" class="thumbnail" data-full="img/jarra.jpg">
                 </div>
                 <div class="card">
                     <img src="img/sombreromini.jpg" alt="Gorro mágico" class="thumbnail" data-full="img/sombrero.jpg">
@@ -98,16 +136,16 @@
                     <img src="img/Gambamini.jpg" alt="Gamba" class="thumbnail" data-full="img/Gamba.jpg">
                 </div>
                 <div class="card">
-                    <img src="img/barcomini.jpg" alt="Barco" class="thumbnail" data-full="barco.jpg">
+                    <img src="img/barcomini.jpg" alt="Barco" class="thumbnail" data-full="img/barco.jpg">
                 </div>
                 <div class="card">
-                    <img src="img/Pepapigmini.jpg" alt="Pepa Pig" class="thumbnail" data-full="Pepapig.jpg">
+                    <img src="img/Pepapigmini.jpg" alt="Pepa Pig" class="thumbnail" data-full="img/Pepapig.jpg">
                 </div>
                 <div class="card">
-                    <img src="img/duendemini.jpg" alt="Duende" class="thumbnail" data-full="duende.jpg">
+                    <img src="img/duendemini.jpg" alt="Duende" class="thumbnail" data-full="img/duende.jpg">
                 </div>
                 <div class="card">
-                    <img src="img/bailarinaAzulmini.jpg" alt="Bailarina" class="thumbnail" data-full="bailarinaAzul.jpg">
+                    <img src="img/bailarinaAzulmini.jpg" alt="Bailarina" class="thumbnail" data-full="img/bailarinaAzul.jpg">
                 </div>
             </div>
 
@@ -194,5 +232,6 @@
     </footer>
     
     <script src="js/js-pinnatas.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
