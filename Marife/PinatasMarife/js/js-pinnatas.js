@@ -22,19 +22,39 @@ window.onclick = (event) => {
     }
 }
 
-document.getElementById('masPignatas').addEventListener('click', function() {
-    var pignatas = [
-        'ruta/a/tu/carpeta/imagen1.jpg',
-        'ruta/a/tu/carpeta/imagen2.jpg',
-        'ruta/a/tu/carpeta/imagen3.jpg'
-    ];
+var indice = 0;
+var pignatas = [
+    'url/../img/polar.jpg',
+    'url/../img/casette.jpg',
+    'url/../img/comunion1.jpg',
+    'url/../img/comunion2.jpg',
+    'url/../img/cesta.jpg',
+    'url/../img/pinata54.jpg',
+    'url/../img/pinata63.jpg'
+];
+
+document.getElementById('masPignatas').addEventListener('click', function(e) {
+    e.preventDefault();
+    
     var contenedor = document.getElementById('contenedorPignatas');
-    pignatas.forEach(function(src) {
+    contenedor.innerHTML = ''; // Limpia las imágenes anteriores
+    
+    var imagenesPorClic = 1; // Cambia a 1 si quieres una por vez
+    
+    for (var i = 0; i < imagenesPorClic && indice < pignatas.length; i++) {
         var img = document.createElement('img');
-        img.src = 'url/../img/polar.jpg';
-        img.alt = 'Polar';
+        img.src = pignatas[indice];
+        img.alt = 'Piñata';
         contenedor.appendChild(img);
-    });
+        indice++;
+    }
+    
+    if (indice >= pignatas.length) {
+        indice = this.style.display = 'none';
+         // Reinicia para volver a empezar
+        // O si prefieres ocultar el botón:
+        // this.style.display = 'none';
+    }
 });
 
 // Pasos elaboración piñatas

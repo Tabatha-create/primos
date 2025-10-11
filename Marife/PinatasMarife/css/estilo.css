@@ -517,3 +517,20 @@ footer {
     line-height: 1.6;
     background-color: transparent;
 } 
+
+#toggleFormulario {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggleFormulario:hover {
+    background-color: #45a049;
+}
