@@ -12,6 +12,9 @@
   --gris-claro: #F5F5F5;
 }
 
+/* Importar fuentes creativas desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&display=swap');
+
 /* Estilos generales */
 * {
   margin: 0;
@@ -20,14 +23,46 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Fredoka', 'Baloo 2', sans-serif;
   color: var(--negro);
   background-color: var(--blanco);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+h1, h2, h3 {
+  font-family: 'Lilita One', 'Fredoka', cursive;
+}
+
+h4, p {
+  font-family: 'Bubblegum Sans', 'Fredoka', cursive;
+}
+
+/* Fondos más suaves para secciones principales */
+main {
+  background: linear-gradient(
+    250deg,
+    rgba(233, 75, 126, 0.2),
+    rgba(240, 124, 62, 0.2),
+    rgba(252, 187, 54, 0.2),
+    rgba(0, 160, 161, 0.2),
+    rgba(109, 44, 125, 0.2)
+  );
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* Hacer las secciones transparentes */
+.hero,
+.galeria,
+.sobre-mi {
+  background: transparent !important;
+  margin: 0;
 }
 
 /* Estilos para el logo */
@@ -35,7 +70,7 @@ h1, h2, h3, h4 {
   display: block;
   max-width: 350px;
   margin: auto;
-  transform: scale(1.5); /* Aumenta el tamaño del logo en un 20% */
+  transform: scale(1.5);
 }
 
 /* Estilos de encabezado */
@@ -45,6 +80,7 @@ header {
   padding-top: 2rem;
   text-align: center;
   border-radius: 20px;
+  margin: 0;
 }
 
 header h1 {
@@ -122,7 +158,8 @@ nav ul li a:hover {
 .contenido-hero {
   flex: 1;
   padding-right: 2rem;
-  min-width: 300px;
+  min-width: 200px;
+  text-align: center;
 }
 
 .hero h2 {
@@ -135,17 +172,6 @@ nav ul li a:hover {
   color: var(--negro);
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-}
-
-.hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex: 1;
-  min-width: 300px;
-  max-height: 400px;
-  object-fit: cover;
 }
 
 /* Botones */
@@ -236,7 +262,7 @@ nav ul li a:hover {
 
 .producto img {
   width: 100%;
-  height: 200px;
+  height: 320px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -274,6 +300,7 @@ nav ul li a:hover {
   background: linear-gradient(to right, var(--turquesa), var(--morado));
 }
 
+/* Sección Sobre Mí */
 .sobre-mi-contenido {
   display: flex;
   align-items: center;
@@ -300,65 +327,185 @@ nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* Versión móvil: imagen arriba, texto abajo */
-@media (max-width: 600px) {
-  .sobre-mi-contenido {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-mi-contenido p {
-    font-size: 0.95rem;
-  }
-}
-
 /* Sección de contacto */
 .contacto {
-  background-color: var(--verde);
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding-bottom: 3rem;
+}
+
+.container {
   text-align: center;
-  margin-top: 2rem;
+  background-color: var(--verde);
+  padding: 15px;
 }
 
-.contacto h3 {
-  color: var(--blanco);
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+.contact-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.contacto form {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-  background-color: var(--blanco);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contacto label {
-  color: var(--morado);
+.contact-trigger {
+  background: linear-gradient(to right, var(--rosa), var(--naranja));
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+  position: relative;
 }
 
-.contacto input, 
-.contacto textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.3rem;
-  border: 1px solid var(--gris-claro);
-  border-radius: 5px;
+.contact-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, var(--naranja), var(--rosa));
 }
 
-.contacto input:focus, 
-.contacto textarea:focus {
+.dropdown-form {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-10px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.contact-dropdown:hover .dropdown-form {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.form-container {
+  padding: 2rem;
+  position: relative;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ef4444;
+  position: relative;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
-  border-color: var(--amarillo);
-  box-shadow: 0 0 5px rgba(252, 187, 54, 0.5);
+  border-color: #c084fc;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.1);
+  transform: translateY(-1px);
 }
 
-.contacto button {
-  margin-top: 1rem;
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-submit {
+  background: linear-gradient(to right, var(--rosa), var(--naranja));
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  align-self: center;
+}
+
+.form-submit:hover {
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 0 5px 15px rgba(192, 132, 252, 0.4);
+}
+
+.form-submit:active {
+  transform: scale(1.02);
+}
+
+/* Decoración sutil */
+.form-container::before {
+  content: "♡";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #ef4444;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+/* Flecha indicadora en el formulario */
+.dropdown-form::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+/* Estados de validación */
+.form-group input:valid,
+.form-group textarea:valid {
+  border-color: #10b981;
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown),
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+/* Mantener el formulario abierto al interactuar con él */
+.dropdown-form:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Footer */
@@ -367,39 +514,14 @@ footer {
   color: var(--blanco);
   text-align: center;
   padding: 2rem;
-  margin-top: 2rem;
+  margin: 0;
 }
 
 footer p {
   margin: 0.5rem 0;
 }
 
-/* Media queries para responsividad */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-  
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contenido-hero {
-    padding-right: 0;
-    margin-bottom: 2rem;
-  }
-  
-  .producto {
-    min-width: 100%;
-  }
-}
-
+/* Botones flotantes */
 #btnUp {
   position: fixed;
   bottom: 30px;
@@ -411,13 +533,14 @@ footer p {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  display: none; /* oculto inicialmente */
+  display: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 #btnUp:hover {
-  background-color:var(--verde); /* color al pasar el mouse */
+  background-color: var(--verde);
 }
 
 #btnHome {
@@ -445,8 +568,89 @@ footer p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Fondos más suaves para secciones principales */
-main {
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contenido-hero {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .producto {
+    min-width: 100%;
+  }
+
+  /* Sobre mí responsive */
+  .sobre-mi-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mi-contenido p {
+    font-size: 0.95rem;
+  }
+
+  /* Formulario responsive */
+  .dropdown-form {
+    width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contact-dropdown:hover .dropdown-form {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .dropdown-form:hover {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-container::before {
+    display: none;
+  }
+  
+  .form-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Solución rápida y segura: aplicar el mismo fondo del <main> al body --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  /* Copia del fondo que usas en main para que no se vea el hueco blanco */
   background: linear-gradient(
     250deg,
     rgba(233, 75, 126, 0.2),
@@ -455,32 +659,18 @@ main {
     rgba(0, 160, 161, 0.2),
     rgba(109, 44, 125, 0.2)
   );
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Hacer las secciones transparentes */
-.hero,
-.galeria,
-.sobre-mi {
-  background: transparent !important;
-  margin: 0;
-}
-/* Importar fuentes creativas desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&display=swap');
-
-/* Aplicar fuente principal al body */
-body {
-  font-family: 'Fredoka', 'Baloo 2', sans-serif;
+/* Aseguramos que main ocupe el espacio disponible */
+main {
+  flex: 1 0 auto;
 }
 
-/* Títulos principales con fuente más divertida */
-h1, h2, h3 {
-  font-family: 'Lilita One', 'Fredoka', cursive;
+/* Asegurar que el footer quede encima de todo si hiciera falta */
+footer {
+  position: relative;
+  z-index: 10;
 }
-
-/* Alternativa: Si prefieres algo más redondeado y suave */
-h4, p {
-  font-family: 'Bubblegum Sans', 'Fredoka', cursive;
-}
-
