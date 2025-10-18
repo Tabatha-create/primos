@@ -15,11 +15,17 @@
 /* Importar fuentes creativas desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&display=swap');
 
-/* Estilos generales */
+/* Reset completo */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -29,9 +35,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
 }
 
 h1, h2, h3 {
@@ -42,7 +46,6 @@ h4, p {
   font-family: 'Bubblegum Sans', 'Fredoka', cursive;
 }
 
-/* Fondos más suaves para secciones principales */
 main {
   background: linear-gradient(
     250deg,
@@ -54,10 +57,8 @@ main {
   );
   margin: 0;
   padding: 0;
-  flex: 1;
 }
 
-/* Hacer las secciones transparentes */
 .hero,
 .galeria,
 .sobre-mi {
@@ -68,16 +69,15 @@ main {
 /* Estilos para el logo */
 .logo {
   display: block;
-  max-width: 350px;
-  margin: auto;
-  transform: scale(1.5);
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Estilos de encabezado */
 header {
   background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 1rem;
   text-align: center;
   border-radius: 20px;
   margin: 0;
@@ -90,7 +90,6 @@ header h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Ocultar el texto del título cuando se muestra el logo */
 .logo-visible {
   position: absolute;
   width: 1px;
@@ -103,29 +102,13 @@ header h1 {
   border-width: 0;
 }
 
-/* Animación sutil para el logo */
-@keyframes logoFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.logo:hover {
-  animation: logoFloat 5s ease-in-out infinite;
-}
-
 /* Navegación */
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0.5rem 0;
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -226,7 +209,6 @@ nav ul li a:hover {
   flex-wrap: wrap;
 }
 
-/* Contenedor para cada producto */
 .producto-container {
   display: flex;
   flex-direction: column;
@@ -235,7 +217,6 @@ nav ul li a:hover {
   max-width: 300px;
 }
 
-/* Título del producto fuera del contenedor */
 .producto-container h4 {
   color: var(--morado);
   font-size: 1.3rem;
@@ -275,10 +256,9 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
-/* Botón "Ver más" */
 .btn-ver-mas {
   display: inline-block;
-  background: linear-gradient(to right, var(--rosa), var(--naranja));
+  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
   color: var(--blanco);
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
@@ -295,7 +275,6 @@ nav ul li a:hover {
   background: linear-gradient(to right, var(--naranja), var(--rosa));
 }
 
-/* Efecto adicional al hacer hover en todo el producto */
 .producto:hover .btn-ver-mas {
   background: linear-gradient(to right, var(--turquesa), var(--morado));
 }
@@ -305,7 +284,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 2rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 900px;
   margin: 0 auto;
@@ -325,18 +304,20 @@ nav ul li a:hover {
   flex: 1;
   font-size: 1rem;
   line-height: 1.6;
+  min-width: 250px;
 }
 
 /* Sección de contacto */
 .contacto {
-  margin-bottom: 0;
-  padding-bottom: 3rem;
+  margin: 0;
+  padding: 2rem 0 0 0;
 }
 
 .container {
   text-align: center;
-  background-color: var(--verde);
-  padding: 15px;
+  padding: 2rem 1rem;
+  margin: 0;
+
 }
 
 .contact-dropdown {
@@ -345,7 +326,7 @@ nav ul li a:hover {
 }
 
 .contact-trigger {
-  background: linear-gradient(to right, var(--rosa), var(--naranja));
+  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -355,7 +336,6 @@ nav ul li a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
-  position: relative;
 }
 
 .contact-trigger:hover {
@@ -365,26 +345,27 @@ nav ul li a:hover {
 }
 
 .dropdown-form {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 400px;
+  max-width: 90vw;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(-10px);
   transition: all 0.4s ease;
   z-index: 1000;
-  margin-top: 10px;
+  pointer-events: none;
 }
 
-.contact-dropdown:hover .dropdown-form {
+.contact-dropdown:hover .dropdown-form,
+.dropdown-form:hover {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
 }
 
 .form-container {
@@ -397,7 +378,6 @@ nav ul li a:hover {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #ef4444;
-  position: relative;
 }
 
 .contact-form {
@@ -465,7 +445,6 @@ nav ul li a:hover {
   transform: scale(1.02);
 }
 
-/* Decoración sutil */
 .form-container::before {
   content: "♡";
   position: absolute;
@@ -476,21 +455,6 @@ nav ul li a:hover {
   opacity: 0.6;
 }
 
-/* Flecha indicadora en el formulario */
-.dropdown-form::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid white;
-}
-
-/* Estados de validación */
 .form-group input:valid,
 .form-group textarea:valid {
   border-color: #10b981;
@@ -501,16 +465,9 @@ nav ul li a:hover {
   border-color: #ef4444;
 }
 
-/* Mantener el formulario abierto al interactuar con él */
-.dropdown-form:hover {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
 /* Footer */
 footer {
-  background-color: var(--morado);
+  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
   color: var(--blanco);
   text-align: center;
   padding: 2rem;
@@ -593,7 +550,6 @@ footer p {
     min-width: 100%;
   }
 
-  /* Sobre mí responsive */
   .sobre-mi-contenido {
     flex-direction: column;
     text-align: center;
@@ -603,19 +559,8 @@ footer p {
     font-size: 0.95rem;
   }
 
-  /* Formulario responsive */
   .dropdown-form {
-    width: 320px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .contact-dropdown:hover .dropdown-form {
-    transform: translateX(-50%) translateY(0);
-  }
-  
-  .dropdown-form:hover {
-    transform: translateX(-50%) translateY(0);
+    width: 90vw;
   }
   
   .form-container {
@@ -639,38 +584,4 @@ footer p {
   .hero p {
     font-size: 1.2rem;
   }
-}
-
-/* --- Solución rápida y segura: aplicar el mismo fondo del <main> al body --- */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  /* Copia del fondo que usas en main para que no se vea el hueco blanco */
-  background: linear-gradient(
-    250deg,
-    rgba(233, 75, 126, 0.2),
-    rgba(240, 124, 62, 0.2),
-    rgba(252, 187, 54, 0.2),
-    rgba(0, 160, 161, 0.2),
-    rgba(109, 44, 125, 0.2)
-  );
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Aseguramos que main ocupe el espacio disponible */
-main {
-  flex: 1 0 auto;
-}
-
-/* Asegurar que el footer quede encima de todo si hiciera falta */
-footer {
-  position: relative;
-  z-index: 10;
 }

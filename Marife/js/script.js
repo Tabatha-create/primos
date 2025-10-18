@@ -1,35 +1,32 @@
 // Botón "Scroll to Top"
 const btnUp = document.getElementById('btnUp');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    btnUp.style.display = 'block';
-  } else {
-    btnUp.style.display = 'none';
-  }
-});
+if (btnUp) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btnUp.style.display = 'block';
+    } else {
+      btnUp.style.display = 'none';
+    }
+  });
 
-btnUp.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  btnUp.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // Manejo del formulario de contacto
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita el envío por defecto
+    e.preventDefault();
     
-    // Obtener valores del formulario
     const nombre = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const asunto = document.getElementById('subject').value;
     const mensaje = document.getElementById('message').value;
     
-    // Aquí puedes agregar la lógica para enviar el formulario
-    // Por ejemplo, usando EmailJS, FormSubmit, o tu propio backend
-    
-    // Simulación de envío exitoso
     console.log('Datos del formulario:', {
       nombre,
       email,
@@ -37,19 +34,15 @@ if (contactForm) {
       mensaje
     });
     
-    // Mostrar mensaje de confirmación
     alert(`¡Gracias ${nombre}! Tu mensaje ha sido enviado. Te responderemos pronto a ${email}.`);
     
-    // Limpiar el formulario
     contactForm.reset();
     
-    // Opcional: Cerrar el dropdown después de enviar
     const dropdown = document.querySelector('.dropdown-form');
     if (dropdown) {
       dropdown.style.opacity = '0';
       dropdown.style.visibility = 'hidden';
       
-      // Restaurar el dropdown después de un tiempo
       setTimeout(() => {
         dropdown.style.opacity = '';
         dropdown.style.visibility = '';
