@@ -10,6 +10,7 @@
   --blanco: #FFFFFF;
   --negro: #333333;
   --gris-claro: #F5F5F5;
+  --gradiente-arcoiris: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
 }
 
 /* Importar fuentes creativas desde Google Fonts */
@@ -34,7 +35,6 @@ body {
   background-color: var(--blanco);
   line-height: 1.6;
   margin: 0;
-  padding: 0;
   height: 100%;
 }
 
@@ -76,7 +76,7 @@ main {
 
 /* Estilos de encabezado */
 header {
-  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
+  background: var(--gradiente-arcoiris);
   padding: 2rem 1rem 1rem;
   text-align: center;
   border-radius: 20px;
@@ -179,7 +179,7 @@ nav ul li a:hover {
 
 /* Sección Galería */
 .galeria {
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
 }
 
@@ -247,7 +247,10 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
-  border: 3px solid var(--blanco);
+  border: 4px solid transparent;
+  background: 
+    linear-gradient(white, white) padding-box,
+    var(--gradiente-arcoiris) border-box;
 }
 
 .producto p {
@@ -258,7 +261,9 @@ nav ul li a:hover {
 
 .btn-ver-mas {
   display: inline-block;
-  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
+background: 
+  linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+  var(--gradiente-arcoiris);
   color: var(--blanco);
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
@@ -272,14 +277,19 @@ nav ul li a:hover {
 .btn-ver-mas:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to right, var(--naranja), var(--rosa));
+  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo));
 }
 
 .producto:hover .btn-ver-mas {
-  background: linear-gradient(to right, var(--turquesa), var(--morado));
+  background: linear-gradient(to right, var(--turquesa), var(--morado), var(--rosa));
 }
 
 /* Sección Sobre Mí */
+.sobre-mi {
+  padding: 2rem 2rem; /* Añadir o ajustar */
+  text-align: center;
+}
+
 .sobre-mi-contenido {
   display: flex;
   align-items: center;
@@ -302,7 +312,7 @@ nav ul li a:hover {
 
 .sobre-mi-contenido p {
   flex: 1;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   min-width: 250px;
 }
@@ -310,14 +320,28 @@ nav ul li a:hover {
 /* Sección de contacto */
 .contacto {
   margin: 0;
-  padding: 2rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 
 .container {
   text-align: center;
   padding: 2rem 1rem;
   margin: 0;
+  color: var(--morado);
+  font-size: 1.3rem;
+}
 
+.container h3 {
+  color: var(--morado);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.container p {
+  color: var(--negro);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .contact-dropdown {
@@ -326,7 +350,7 @@ nav ul li a:hover {
 }
 
 .contact-trigger {
-  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
+  background: var(--gradiente-arcoiris);
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -445,16 +469,6 @@ nav ul li a:hover {
   transform: scale(1.02);
 }
 
-.form-container::before {
-  content: "♡";
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #ef4444;
-  font-size: 1.5rem;
-  opacity: 0.6;
-}
-
 .form-group input:valid,
 .form-group textarea:valid {
   border-color: #10b981;
@@ -467,7 +481,7 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo), var(--verde), var(--turquesa), var(--morado));
+  background: var(--gradiente-arcoiris);
   color: var(--blanco);
   text-align: center;
   padding: 2rem;
@@ -585,3 +599,4 @@ footer p {
     font-size: 1.2rem;
   }
 }
+

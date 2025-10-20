@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasías Marife — Filigranas de papel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo-fantasias.css">
+  <script src="js/js-fantasias.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Fantasías Marife</h1>
+    <section class="banner">
+        <img src="img/fantasias/fantasias.png" alt="Banner principal de Fantasías Marife">
+    </section>
+    <p>Arte en filigranas de papel — pendientes, mandalas y piezas únicas hechas a mano</p>
+    
+</header>
+    <nav class="navegacion">
+        <a href="#galeria">Galería</a>
+        <a href="#arte-papel">El arte detrás del papel</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+
+  <section class="historia">
+    <h2>Fantasías hechas de papel</h2>
+    <p>
+      En <strong>Fantasías Marife</strong> transformamos el papel en arte. Cada pieza es elaborada con la técnica de <em>filigrana</em> o <em>quilling</em>,
+      donde finas tiras de papel se enrollan, moldean y combinan para formar pendientes, colgantes, mandalas y detalles decorativos únicos.
+    </p>
+  </section>
+
+  <main class="trabajos">
+    <h2 id="galeria">Galería de Creaciones</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="img/pendientes1.jpg" alt="Pendientes de filigrana" class="thumbnail" data-full="img/pendientes1-grande.jpg">
+      </div>
+      <div class="card">
+        <img src="img/mandala1.jpg" alt="Mandala artesanal" class="thumbnail" data-full="img/mandala1-grande.jpg">
+      </div>
+      <div class="card">
+        <img src="img/colgante1.jpg" alt="Colgante de filigrana" class="thumbnail" data-full="img/colgante1-grande.jpg">
+      </div>
+      <div class="card">
+        <img src="img/posavasos1.jpg" alt="Posavasos decorativo" class="thumbnail" data-full="img/posavasos1-grande.jpg">
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para las imágenes -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img class="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <section id="arte-papel" class="pasos">
+    <h2>El arte detrás del papel</h2>
+    <ul>
+      <li>
+        <p>
+          En la filigrana, cada detalle cuenta. Se utilizan herramientas como enrolladores, pinzas y tiras de papel de distintos colores y grosores para dar forma a cada diseño.
+        </p>
+        <img src="img/herramientas-filigrana.jpg" alt="Herramientas para filigrana de papel">
+      </li>
+      <li>
+        <p>
+          Las tiras se enrollan con cuidado y se moldean en figuras que, al unirse, forman composiciones únicas. Este proceso combina paciencia, precisión y creatividad.
+        </p>
+        <img src="img/proceso-filigrana.jpg" alt="Proceso de elaboración de filigrana">
+      </li>
+    </ul>
+  </section>
+
+  <section id="contacto" class="formulario">
+    <fieldset>
+      <legend>Contacto y pedidos</legend>
+      <form>
+        <div class="inputs">
+          <div class="container-input">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="container-input">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="container-input">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué te gustaría encargar..."></textarea>
+          </div>
+        </div>
+        <input class="enviar" type="submit" value="Enviar">
+      </form>
+    </fieldset>
+  </section>
+
+  <footer>
+    &copy; 2025 Fantasías Marife — Filigranas de papel hechas con amor y dedicación.
+  </footer>
+</body>
+</html>
+
+
