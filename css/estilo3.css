@@ -1,110 +1,360 @@
-:root {
-  --sol-cariñoso: #FFD966;
-  --aguamarina-alegre: #7DE1C3;
-  --melocotón-cálido: #FFB48C;
-  --papel-antiguo: #FFF8E7;
-  --verde-abrazo: #AED8A5;
-  --charcoal-historia: #4C4C4C;
+ :root {
+  /* ================================================= */
+  /* PALETA FINAL: FRESCO TROPICAL (Alegría, Mar y Palmeras) */
+  /* ================================================= */
+  --principal-alegre: #FF7F50;    /* Coral (Alegría, Botones, Acentos) */
+  --mar-profundo: #2874A6;        /* Azul Medio (Texto principal, Footer) */
+  --acento-fresco: #40B5AD;        /* Verde Mar / Palmera (Acentos, Hover) */
+  --arena-clara: #FAEBD7;         /* Blanco Antiguo (Fondo principal, Luminosidad) */
+  --suave-crema: #EBF5F7;          /* Azul Muy Claro (Fondos de tarjetas, Suavidad) */
+  --gris-texto-suave: #607D8B;     /* Gris Azulado (Texto secundario y sombras, Sencillez) */
+}
+
+/* ================
+   Reset básico
+================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background-color: var(--papel-antiguo);
-  color: var(--charcoal-historia);
+  font-family: 'Segoe UI', sans-serif;
+  /* Fondo muy claro y luminoso */
+  background-color: var(--arena-clara); 
+  /* Color de texto principal, Mar Profundo */
+  color: var(--mar-profundo);
   line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Cabecera con toque cálido */
-.cabecera-comun {
-  background-color: var(--sol-cariñoso);
-  padding: 30px 20px;
+/* ====================
+   Cabecera común con fondo suave
+==================== */
+header.cabecera-comun {
   position: relative;
-  border-bottom: 5px solid var(--melocotón-cálido);
-}
-.header-content p {
-  font-size: 1.7em;
+  height: 40vh;
+  min-height: 500px;
+  max-height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 0;
-  color: var(--charcoal-historia);
-  font-weight: bold;
+  overflow: hidden;
+  color: white;
+  /* Fondo por defecto más suave */
+  background-color: var(--suave-crema); 
 }
 
-/* Imágenes decorativas como puntos de luz */
-.imagen-decorativa {
-  width: 40px;
-  height: 40px;
-  background-color: var(--aguamarina-alegre);
-  border-radius: 50%;
+/* Imagen principal central */
+header.cabecera-comun::before {
+  content: "";
   position: absolute;
-  opacity: 0.5;
+  inset: 0;
+  background-image: url("../img/laCalera-1955.jpg"); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Mantenemos el filtro para luminosidad */
+  filter: brightness(1.1) contrast(1.05); 
+  z-index: 1;
 }
-.top-left    { top: 10px; left: 10px; }
-.top-right   { top: 10px; right: 10px; }
-.middle-left { top: 50%; left: 20px; transform: translateY(-50%); }
-.middle-right{ top: 50%; right: 20px; transform: translateY(-50%); }
-.bottom-left { bottom: 10px; left: 10px; }
-.bottom-right{ bottom: 10px; right: 10px; }
 
-/* Navegación luminosa */
+/* Degradado Suave con Mar y Coral */
+header.cabecera-comun::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(40, 116, 166, 0.6) 0%,    /* Mar Profundo 60% */
+    rgba(255, 127, 80, 0.3) 50%,  /* Coral 30% */
+    rgba(250, 235, 215, 0.0) 100%  /* Arena Clara 0% (transparente) */
+  );
+  z-index: 2;
+}
+
+/* Imágenes decorativas pequeñas */
+header.cabecera-comun .imagen-decorativa {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  filter: none; 
+  opacity: 0.8;
+  z-index: 3;
+  /* Borde muy suave */
+  border: 2px solid rgba(235, 245, 247, 0.8); 
+  /* Sombra suave (en tono Mar Profundo) */
+  box-shadow: 0 4px 12px rgba(40, 116, 166, 0.2); 
+}
+
+/* Posiciones de las imágenes decorativas (mantener posiciones) */
+header.cabecera-comun .imagen-decorativa.top-left {
+  top: 10%;
+  left: 8%;
+  background-image: url("../img/imagen1.jpg");
+}
+
+header.cabecera-comun .imagen-decorativa.top-right {
+  top: 10%;
+  right: 8%;
+  background-image: url("../img/imagen2.jpg");
+}
+
+header.cabecera-comun .imagen-decorativa.bottom-left {
+  bottom: 10%;
+  left: 8%;
+  background-image: url("../img/imagen3.jpg");
+}
+
+header.cabecera-comun .imagen-decorativa.bottom-right {
+  bottom: 10%;
+  right: 8%;
+  background-image: url("../img/imagen4.jpg");
+}
+
+header.cabecera-comun .imagen-decorativa.middle-left {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  background-image: url("../img/imagen5.jpg");
+}
+
+header.cabecera-comun .imagen-decorativa.middle-right {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  background-image: url("../img/imagen6.jpg");
+}
+
+/* Efectos hover para las imágenes decorativas */
+header.cabecera-comun .imagen-decorativa:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  /* Borde con Acento Fresco (Verde Mar) */
+  border-color: var(--acento-fresco); 
+  /* Sombra más marcada */
+  box-shadow: 0 6px 16px rgba(40, 116, 166, 0.4); 
+}
+
+/* Contenido del header por encima de todo */
+header.cabecera-comun .header-content {
+  position: relative;
+  z-index: 4;
+  padding: 1rem 2rem;
+}
+
+header.cabecera-comun img.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  /* Borde Arena Clara */
+  border: 3px solid var(--arena-clara); 
+  /* Fondo Suave Crema */
+  background-color: rgba(235, 245, 247, 0.85); 
+  margin-bottom: 1rem;
+  /* Sombra suave */
+  box-shadow: 0 0 10px rgba(40, 116, 166, 0.4); 
+  filter: brightness(1.05); 
+}
+
+header.cabecera-comun h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  /* Texto Arena Clara para contraste */
+  color: var(--arena-clara); 
+  /* Sombra del texto Mar Profundo */
+  text-shadow: 2px 2px 4px rgba(40, 116, 166, 0.7); 
+}
+
+header.cabecera-comun p {
+  font-size: 1.3rem;
+  /* Texto Arena Clara para contraste */
+  color: var(--arena-clara); 
+  /* Sombra del texto Mar Profundo */
+  text-shadow: 1px 1px 3px rgba(40, 116, 166, 0.6); 
+}
+
+/* ===================
+   Navegación
+=================== */
+nav {
+  /* Fondo degradado Mar y Verde */
+  background: linear-gradient(135deg, var(--mar-profundo), var(--acento-fresco));
+  padding: 0.75rem 0;
+  /* Sombra más clara */
+  box-shadow: 0 2px 8px rgba(40, 116, 166, 0.3); 
+}
+
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  background-color: var(--aguamarina-alegre);
-  padding: 12px 0;
-  margin: 0;
+  gap: 2rem;
 }
-nav li {
-  margin: 0 20px;
-}
+
 nav a {
-  color: white;
+  /* Color del texto Arena Clara */
+  color: var(--arena-clara); 
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  /* Color de hover Principal Alegre (Coral) */
+  color: var(--principal-alegre); 
+  /* Fondo de hover transparente sutil */
+  background-color: rgba(255, 127, 80, 0.15); 
+  transform: translateY(-2px);
+}
+
+/* =====================
+   Contenido principal
+===================== */
+main {
+  padding: 2rem 1rem;
+  background-color: var(--arena-clara);
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.tarjeta {
+  /* Fondo degradado suave (Azul Muy Claro a Arena) */
+  background: linear-gradient(145deg, var(--suave-crema), var(--arena-clara));
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  /* Sombra suave y ligera */
+  box-shadow: 
+    4px 4px 12px rgba(40, 116, 166, 0.1),
+    inset 1px 1px 3px rgba(235, 245, 247, 0.8);
+  max-width: 500px;
+  margin: 1.5rem auto;
+  /* Borde muy suave */
+  border: 1px solid var(--suave-crema);
+}
+
+.tarjeta h2 {
+  /* Color del título Mar Profundo */
+  color: var(--mar-profundo);
+  margin-bottom: 1rem;
   font-weight: bold;
 }
-nav a:hover {
-  color: var(--sol-cariñoso);
+
+.tarjeta p {
+  /* Color del texto Gris Azulado (para sencillez) */
+  color: var(--gris-texto-suave);
 }
 
-/* Título principal */
-h1 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-top: 40px;
-  color: var(--melocotón-cálido);
+/* ====================
+   Galería de imágenes
+==================== */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Secciones */
-section {
-  background-color: var(--verde-abrazo);
-  margin: 40px 20px;
-  padding: 30px;
-  border-left: 6px solid var(--melocotón-cálido);
+.galeria img {
+  width: 220px;
+  height: auto;
   border-radius: 10px;
+  /* Sombra más suave */
+  box-shadow: 
+    4px 4px 12px rgba(40, 116, 166, 0.15),
+    2px 2px 6px rgba(64, 181, 173, 0.1);
+  transition: all 0.3s ease;
+  /* Filtro de color sutil */
+  filter: saturate(1.1) brightness(1.05); 
+  /* Borde de color Suave Crema */
+  border: 2px solid var(--suave-crema);
 }
 
-/* Tarjetas creativas */
-.tarjeta {
-  background-color: #fff;
-  padding: 20px;
-  border-left: 5px solid var(--aguamarina-alegre);
-  border-radius: 8px;
-  box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-}
-.tarjeta h3 a {
-  color: var(--melocotón-cálido);
-  text-decoration: none;
-}
-.tarjeta h3 a:hover {
-  text-decoration: underline;
+.galeria img:hover {
+  transform: scale(1.05) rotate(1deg);
+  /* Filtro a color natural */
+  filter: none; 
+  /* Sombra más suave y marcada */
+  box-shadow: 
+    6px 6px 16px rgba(40, 116, 166, 0.25),
+    3px 3px 8px rgba(64, 181, 173, 0.2);
 }
 
-/* Footer con cariño */
+/* ====================
+   Pie de página
+==================== */
 footer {
-  background-color: var(--sol-cariñoso);
-  color: var(--charcoal-historia);
+  /* Fondo degradado Mar y Verde */
+  background: linear-gradient(135deg, var(--mar-profundo), var(--acento-fresco));
+  /* Color del texto Arena Clara */
+  color: var(--arena-clara); 
   text-align: center;
-  padding: 30px 20px;
-  font-size: 1.2em;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  /* Sombra suave hacia arriba */
+  box-shadow: 0 -4px 12px rgba(40, 116, 166, 0.3); 
 }
+
+/* ====================
+   Efectos adicionales
+==================== */
+h1, h2, h3 {
+  /* Color de encabezados Mar Profundo */
+  color: var(--mar-profundo);
+  font-family: 'Segoe UI', sans-serif; 
+}
+
+/* Efecto papel (se mantiene el efecto sutil) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Degradado sutil de Mar y Verde */
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(64, 181, 173, 0.03) 0%, transparent 50%), /* Verde sutil */
+    radial-gradient(circle at 80% 20%, rgba(40, 116, 166, 0.03) 0%, transparent 50%); /* Azul sutil */
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Botones con estilo alegre y suave */
+button, .boton {
+  /* Fondo degradado Alegre (Coral a Verde Mar) */
+  background: linear-gradient(145deg, var(--principal-alegre), var(--acento-fresco));
+  /* Color del texto Mar Profundo */
+  color: var(--mar-profundo); 
+  /* Borde de color Principal Alegre (Coral) */
+  border: 2px solid var(--principal-alegre); 
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Sombra suave */
+  box-shadow: 3px 3px 8px rgba(255, 127, 80, 0.3); 
+}
+
+button:hover, .boton:hover {
+  /* Invertir el degradado para el hover */
+  background: linear-gradient(145deg, var(--acento-fresco), var(--principal-alegre)); 
+  transform: translateY(-2px);
+  /* Sombra más visible */
+  box-shadow: 4px 4px 12px rgba(255, 127, 80, 0.5); 
+}
+
