@@ -1,61 +1,96 @@
-/* Variables de colores mejorados para legibilidad */
+/* Importar fuentes festivas de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bubblegum+Sans&display=swap');
+
+/* Variables de colores equilibrados y armoniosos */
 :root {
-    --rosa: #fcaed5;
+    --rosa-suave: #ff99c2;
+    --rosa-principal: #ff6b9d;
     --verde-manzana: #c5ed85;
-    --azul-cielo: #b1daea;
-    --naranja: #FFA500;
+    --azul-cielo: #87ceeb;
+    --morado-suave: #b99bd6;
+    --amarillo-suave: #ffe066;
     --blanco: #FFFFFF;
-    --negro: #333333;
+    --gris-texto: #4a4a4a;
     
-    /* Colores adicionales para mejor legibilidad */
-    --verde-suave: #e8f5e8;
-    --texto-oscuro: #2c3e50;
-    --azul-claro: #e3f2fd;
+    /* Colores de fondo suaves */
+    --fondo-principal: #fef9ff;
+    --fondo-seccion: #f5f9ff;
+    --verde-muy-suave: #f7fcf4;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Cambio: fondo más suave y legible */
-    background-color: var(--verde-suave);
-    font-family: Georgia, 'Times New Roman', Times serif;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    font-family: 'Bubblegum Sans', sans-serif;
+    color: var(--gris-texto);
+    padding: 20px;
 }
 
 header {
-    background-color: var(--rosa);
-    color: var(--blanco);
-    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 153, 194, 0.3) 0%, rgba(197, 237, 133, 0.3) 100%);
+    color: var(--gris-texto);
+    padding: 1.5rem;
     border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
 }
 
 h1 {
     text-align: center;
-    color: var(--rosa);
-    font-weight: bolder; 
-    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--morado-suave) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700; 
+    font-size: 2.8rem;
+    text-shadow: none;
+    letter-spacing: 1px;
 }
 
 .navegacion {
-    background-color: var(--verde-manzana);
+    background: linear-gradient(135deg, var(--verde-manzana) 0%, #b8e673 100%);
     width: 100%;
-    top: 50;
+    position: sticky;
+    top: 0;
     z-index: 1000;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #2d5016;
+    background: none;
+    padding: 0.65rem 1.3rem;
+    font-weight: 600;
     border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.navegacion a:hover {
+    background-color: rgba(255,255,255,0.4);
+    transform: translateY(-2px);
+    color: #1a3d0a;
 }
 
 .sidebar {
     position: fixed;
     top: 20%;
     right: 5px;
-    background-color: #87CEEB;
-    padding: 3px;
-    border: 1px solid ;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: var(--azul-cielo);
+    padding: 8px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
 }
 
@@ -64,42 +99,45 @@ h1 {
     padding: 0;
 }
 
+/* ================================================= */
+/* Banner ajustado para la imagen colorida */
+/* ================================================= */
 .banner {
     width: 100%;
     position: relative;
-    overflow: visible;
+    max-height: 280px; 
+    overflow: hidden; 
     margin-bottom: 2rem;
-    border-radius: 25px;
+    border-radius: 20px;
     text-align: center;
-    max-height: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .banner img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center 35%;
     display: block;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
 }
 
 section {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .historia {
-    /* Cambio: fondo más legible */
-    background-color: var(--azul-claro);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* Cambio: tamaño de fuente más legible */
-    font-size: 0.85rem;
+    background: linear-gradient(135deg, var(--fondo-seccion) 0%, rgba(177, 218, 234, 0.2) 100%);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
     font-style: italic;
     text-align: center;
-    padding: 1rem;
-    /* Cambio: color de texto más oscuro para mejor legibilidad */
-    color: var(--texto-oscuro);
+    padding: 1.8rem;
+    color: var(--gris-texto);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2.5rem;
+    border: 2px solid rgba(197, 237, 133, 0.3);
 }
 
 @media (min-width: 1200px) {
@@ -112,7 +150,7 @@ section {
 .contenedor-servicios {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -125,21 +163,29 @@ section {
 
 .columnas {
     flex: 1;
-    padding: 15px;
-    border: 1px solid #ccc;
-    background-color: var(--azul-cielo);
+    padding: 25px;
+    border: 2px solid rgba(135, 206, 235, 0.3);
+    background: linear-gradient(135deg, var(--blanco) 0%, var(--fondo-seccion) 100%);
     margin-bottom: 1rem;
-    border-radius: 25px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
-.contenedor-servicios p, ul {
+.columnas:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    border-color: var(--rosa-suave);
+}
+
+.contenedor-servicios p, 
+.contenedor-servicios ul {
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1.7;
     padding: 1rem;
-    margin: 1rem;
-    /* Cambio: color de texto más oscuro para mejor legibilidad */
-    color: var(--texto-oscuro);
-    border-radius: 15px;
+    margin: 0.5rem 0;
+    color: var(--gris-texto);
+    background-color: transparent;
 }
 
 .iconos {
@@ -155,7 +201,13 @@ section {
 
 h2 {
     text-align: center;
-    color: var(--rosa);
+    background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--morado-suave) 50%, var(--azul-cielo) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
 }
 
 ul {
@@ -170,9 +222,7 @@ ul ol {
 
 li {
     padding: 0.25rem 1rem;
-    /* Cambio: color de texto más oscuro */
-    color: var(--texto-oscuro);
-    border-radius: 15px;
+    color: var(--gris-texto);
 }
 
 .centrar-imagen {
@@ -182,134 +232,268 @@ li {
     margin-right: auto;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    /* Cambio: color de texto más oscuro para mejor legibilidad */
-    color: var(--texto-oscuro);
-}
-
+/* ================================================= */
+/* Galería equilibrada */
+/* ================================================= */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
 }
 
 .gallery img {
     margin: 1.5px;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 .card {
-    display: flexbox;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    padding: 0rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    padding: 0.5rem;
     background-color: var(--blanco);
-    border: 2px solid var(--verde-manzana);
-    border-radius: 25px;
+    border: 3px solid rgba(197, 237, 133, 0.5);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-color: var(--rosa-suave);
 }
 
 .thumbnail {
     padding: 0.25rem;
-    width: 15vw;
-    height: 23vw;
-    object-fit: cover;
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
     cursor: pointer;
-    border: 2px solid var(--rosa);
-    transition: border-color 0.3s;
+    border: 2px solid var(--rosa-suave);
+    transition: all 0.3s ease;
+    border-radius: 18px 18px 0 0; 
 }
 
 .thumbnail:hover {
-    border-color: #f817a9;
+    border-color: var(--rosa-principal);
+    transform: scale(1.03);
 }
 
+/* ================================================= */
+/* Contenedor de piñatas adicionales */
+/* ================================================= */
+
+#contenedorPignatas {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px 0;
+}
+
+#contenedorPignatas img {
+    max-width: 300px; 
+    height: auto; 
+    border-radius: 20px;
+    padding: 8px;
+    border: 3px solid rgba(197, 237, 133, 0.4);
+    background-color: var(--blanco); 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#contenedorPignatas img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--rosa-suave);
+}
+
+/* Botón festivo multicolor pero equilibrado */
+#masPignatas {
+    background: linear-gradient(135deg, 
+        #ff99c2 0%,
+        #c5ed85 35%, 
+        #87ceeb 65%, 
+        #b99bd6 100%);
+    color: var(--blanco);
+    border: none;
+    padding: 14px 35px;
+    margin: 25px auto;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    display: block; 
+    width: fit-content; 
+    text-transform: uppercase;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#masPignatas:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+/* ================================================= */
+/* Modal */
+/* ================================================= */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1001; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.92); 
 }
 
 .modal-content {
     display: flex;
     justify-content: center;
-    height: 85%;
-    background-color: var(--verde-suave);
-    padding: 20px;
     align-items: center;
-    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; 
 }
 
 .modal-image {
-    max-width: 100%;
-    max-height: 100%;
-    display: block
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.close, .prev, .next {
+    position: absolute;
+    color: var(--blanco);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close:hover, .prev:hover, .next:hover {
+    background-color: var(--rosa-principal);
+    transform: scale(1.15);
 }
 
 .close {
-    font-size: 40px;
-    font-weight: bold;
-    position: absolute;
     right: 35px;
     top: 15px;
-    cursor: pointer;
+}
+
+.prev {
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.prev:hover {
+    transform: translateY(-50%) scale(1.15);
+}
+
+.next {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.next:hover {
+    transform: translateY(-50%) scale(1.15);
 }
 
 /* Pasos para las piñatas */
 #pinnataCar {
     border-radius: 15%;
     padding: 0.25rem;
-    border: thick;
-    border-style: outset;
-    border-color: blueviolet;
+    border: 4px solid var(--morado-suave);
+    border-style: solid;
     max-width: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #procedimiento {
     display: none;
     margin-bottom: 20px;
     text-align: center;
-    color: blueviolet;
-    font-weight: bolder;
+    color: var(--morado-suave);
+    font-weight: 700;
 }
 
-ul {
-    counter-reset: pasos;
-    list-style-type: none;
-    padding: 0;
+/* ================================================= */
+/* Lista de pasos mejorada */
+/* ================================================= */
+.pasos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .pasos li {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* Cambio: tamaño de fuente más legible */
-    font-size: 1.5rem;
-    /* Cambio: color de texto más oscuro */
-    color: var(--texto-oscuro);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px; 
+    font-size: 1.15rem; 
+    color: var(--gris-texto);
+    text-align: left;
+    background: linear-gradient(135deg, var(--blanco) 0%, var(--verde-muy-suave) 100%);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border: 2px solid rgba(197, 237, 133, 0.3);
 }
 
 .pasos img {
-    max-width: 45%;
-    height: 15rem;
-    width: 25rem;
+    max-width: 450px;
+    width: 50%; 
+    height: 250px; 
+    object-fit: contain; 
+    background-color: var(--blanco); 
     border-radius: 10%;
     padding: 0.15rem;
 }
 
+@media (max-width: 768px) {
+    .pasos li {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .pasos img {
+        width: 80%; 
+        height: auto; 
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* ================================================= */
+/* Formulario armonioso */
+/* ================================================= */
 .formulario {
-    background-color: var(--azul-cielo);
+    background: linear-gradient(135deg, var(--fondo-seccion) 0%, rgba(197, 237, 133, 0.15) 100%);
     width: min(80rem, 100%);
-    margin: 0 auto;
-    padding: 1rem;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
     border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 2px solid rgba(135, 206, 235, 0.3);
 }
 
 .formulario fieldset {
@@ -318,22 +502,25 @@ ul {
 }
 
 .formulario legend {
-    font-size: 1rem;
+    font-size: 1.4rem;
     text-align: center;
     text-transform: uppercase;
-    color: blue;
-    font-weight: bold;
+    background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--azul-cielo) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
 .container-input {
     margin-bottom: 1.5rem;
-    border-radius: 25px;
 }
 
 .container-input label {
-    color: #f817a9;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+    color: var(--rosa-principal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
     display: block;
     text-align: left;
 }
@@ -341,21 +528,46 @@ ul {
 .container-input input,
 .container-input textarea {
     width: 100%;
-    padding: 0.5rem;
-    border-color: var(--verde-manzana);
-    border-radius: 5px;
-    /* Cambio: color de texto más oscuro en los campos */
-    color: var(--texto-oscuro);
+    padding: 0.85rem;
+    border: 2px solid rgba(197, 237, 133, 0.5);
+    border-radius: 12px;
+    color: var(--gris-texto);
+    font-family: 'Fredoka', sans-serif;
+    background-color: var(--blanco);
+    transition: all 0.3s ease;
+}
+
+.container-input input:focus,
+.container-input textarea:focus {
+    outline: none;
+    border-color: var(--rosa-suave);
+    box-shadow: 0 0 12px rgba(255, 153, 194, 0.2);
 }
 
 .enviar {
     text-transform: uppercase;
-    background-color: var(--naranja);
+    background: linear-gradient(135deg, 
+        #ff99c2 0%,
+        #87ceeb 50%, 
+        #b99bd6 100%);
     color: var(--blanco);
     width: 50%;
-    font-weight: bolder;
-    margin-top: 0.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
     cursor: pointer;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
 }
 
 @media (min-width: 768px) {
@@ -378,12 +590,14 @@ ul {
 
 footer {
     text-align: center;
-    font-size: small;
-    color: #f817a9;
+    font-size: 0.95rem;
+    color: var(--rosa-principal);
+    margin-top: 3rem;
+    font-weight: 500;
+    padding: 1rem;
 }
 
-/* ========== ESTILOS PARA TEXTO EXPANDIBLE ========== */
-/* Agregar al final del archivo estilos.css */
+/* ========== TEXTO EXPANDIBLE ========== */
 
 .texto-expandible {
     position: relative;
@@ -395,7 +609,7 @@ footer {
 
 .btn-expandir,
 .btn-contraer {
-    color: var(--rosa);
+    color: var(--rosa-principal);
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
@@ -407,11 +621,61 @@ footer {
 
 .btn-expandir:hover,
 .btn-contraer:hover {
-    color: var(--naranja);
+    color: var(--morado-suave);
 }
 
 .texto-resumen,
 .texto-completo {
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: transparent;
+} 
+
+#toggleFormulario {
+    display: block;
+    margin: 25px auto;
+    padding: 14px 35px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, 
+        #c5ed85 0%,
+        #87ceeb 50%, 
+        #4CAF50 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#toggleFormulario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+#btnUp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 16px 19px;
+    font-size: 24px;
+    background: linear-gradient(135deg, 
+        #ff99c2 0%,
+        #ffe066 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#btnUp:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.08);
 }

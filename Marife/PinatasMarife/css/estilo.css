@@ -19,7 +19,7 @@
     box-sizing: border-box;
     /* Cambio: fondo más suave y legible */
     background-color: var(--verde-suave);
-    font-family: Georgia, 'Times New Roman', Times serif;
+    font-family: 'Bubblegum Sans', sans-serif;
 }
 
 header {
@@ -39,7 +39,7 @@ h1 {
 .navegacion {
     background-color: var(--verde-manzana);
     width: 100%;
-    top: 50;
+    top: 0;
     z-index: 1000;
     text-align: center;
     display: flex;
@@ -48,6 +48,17 @@ h1 {
     border-radius: 15px;
 }
 
+.navegacion a {
+    text-decoration: none;
+    color: #4a7c2c;
+    background: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.navegacion a:hover {
+    color: #1a3d0a;
+}
 .sidebar {
     position: fixed;
     top: 20%;
@@ -533,4 +544,25 @@ footer {
 
 #toggleFormulario:hover {
     background-color: #45a049;
+}
+
+#btnUp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 24px;
+  background-color: var(--rosa);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#btnUp:hover {
+  background-color: var(--verde);
 }
