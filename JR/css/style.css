@@ -120,12 +120,13 @@ nav ul li a:hover {
 .hero {
   display: flex;
   align-items: center;
+  width: 90%;
   flex-wrap: wrap;
   padding: 3rem 2rem;
   background-color: var(--blanco-roto);
   text-align: center;
   border: 2px solid var(--dorado-bronce);
-  margin: 2rem 0;
+  margin: 3rem 4rem;
   border-radius: 10px;
 }
 
