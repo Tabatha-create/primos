@@ -1,4 +1,11 @@
-
+    function toggleContacto() {
+      const formulario = document.getElementById('formularioContacto');
+      const flecha = document.getElementById('flechaToggle');
+      
+      formulario.classList.toggle('activo');
+      flecha.classList.toggle('activo');
+    }
+    
   const btnUp = document.getElementById('btnUp');
 
   window.addEventListener('scroll', () => {

@@ -58,7 +58,7 @@ header .banner {
   padding: 10px; /* espacio entre la imagen y el fondo */
 }
 
-header .banner img {
+.banner img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -133,6 +133,82 @@ h2 {
 .historia h2 {
   color: var(--rosa-floral);
   margin-bottom: 0.8rem;
+}
+
+.historia {
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .trabajos {
+        width: 1100px;
+        margin: 2rem auto;
+    }
+}
+
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .contenedor-servicios {
+        flex-direction: row;
+    }
+}
+
+.columnas {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 25px;
+}
+
+.contenedor-servicios p {
+    text-align: justify;
+    line-height: 1.5;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+}
+
+.iconos {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 35%;
+    margin-bottom: 1rem;
+}
+
+.iconos .img {
+    display: inline-block;
+}
+
+h2 {
+    text-align: center;
+}
+
+ol {
+    padding: 1rem;
+    margin-left: 20px;
+}
+
+li {
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+}
+
+.centrar-imagen {
+    padding: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ==============================

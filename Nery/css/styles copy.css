@@ -1,22 +1,15 @@
-:root {
-  /* Colores de las fotografías - Mar y Playa */
-  --azul-mar: #a6adaf;                  /* Azul turquesa del mar */
-  --azul-cielo-claro: #87CEEB;          /* Cielo azul brillante */
-  --turquesa-agua: #5BB4C8;             /* Agua clara */
-  --arena-volcanica: #6B6B6B;           /* Arena gris volcánica */
-  --arena-mojada: #4A4A4A;              /* Arena mojada oscura */
-  
-  /* Colores del atardecer de la foto 1 */
-  --dorado-sol: #F4A460;                /* Luz dorada del sol */
-  --naranja-calido: #E8925C;            /* Naranja suave del horizonte */
-  --durazno: #FFDAB9;                   /* Tono durazno del cielo */
-  --azul-atardecer: #6B9BB5;            /* Azul suave del atardecer */
-  
-  /* Tonos de cerámica y barro */
-  --terracota: #C97A5F;                 /* Terracota natural */
-  --barro-claro: #D4A574;               /* Barro seco */
-  
-  /* Colores base */
+ :root {
+  --azul-mar: #a6adaf;
+  --azul-cielo-claro: #87CEEB;
+  --turquesa-agua: #5BB4C8;
+  --arena-volcanica: #6B6B6B;
+  --arena-mojada: #4A4A4A;
+  --dorado-sol: #F4A460;
+  --naranja-calido: #E8925C;
+  --durazno: #FFDAB9;
+  --azul-atardecer: #6B9BB5;
+  --terracota: #C97A5F;
+  --barro-claro: #D4A574;
   --blanco: #FFFFFF;
   --crema: #FFF8F0;
   --texto: #3A3A3A;
@@ -50,12 +43,7 @@ h1, h2, h3, h4 {
 
 /* HEADER - Cielo y Mar de las fotos */
 header {
-  background: linear-gradient(
-    to bottom,
-    var(--azul-cielo-claro) 0%,
-    var(--turquesa-agua) 50%,
-    var(--azul-mar) 100%
-  );
+  background: linear-gradient(to bottom, var(--azul-cielo-claro) 0%, var(--turquesa-agua) 50%, var(--azul-mar) 100%);
   padding: 3rem 1rem;
   text-align: center;
   border-radius: 0 0 35px 35px;
@@ -156,7 +144,7 @@ nav ul li a:hover {
 }
 
 .hero h2 {
-  background: linear-gradient(135deg, var(--azul-mar), var(--dorado-sol));
+  background: linear-gradient(125deg, var(--terracota), var(--azul-mar));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -337,32 +325,68 @@ nav ul li a:hover {
   color: var(--texto);
 }
 
-@media (max-width: 600px) {
-  .sobre-mi-contenido {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-mi-contenido p {
-    font-size: 1.05rem;
-  }
-}
-
-/* FORMULARIO DE CONTACTO */
+/* CONTACTO DESPLEGABLE */
 .contacto {
   background: linear-gradient(135deg, var(--azul-mar), var(--turquesa-agua), var(--azul-cielo-claro));
-  padding: 4rem 2rem;
+  padding: 2rem 5rem;
   text-align: center;
-  margin-top: 3rem;
+  margin: 3rem auto;
   position: relative;
+  overflow: hidden;
+  width: 80%;
+  border-radius: 25px;
 }
 
-.contacto h3 {
+.contacto-header {
+  cursor: pointer;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.contacto-header:hover {
+  transform: scale(1.02);
+}
+
+.contacto-header h3 {
   color: var(--blanco);
   font-size: 2.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flecha-toggle {
+  display: inline-block;
+  transition: transform 0.4s ease;
+  font-size: 2rem;
+}
+
+.flecha-toggle.activo {
+  transform: rotate(180deg);
+}
+
+.contacto-texto {
+  color: var(--blanco);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.formulario-contenedor {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+  padding: 0 2rem;
+}
+
+.formulario-contenedor.activo {
+  max-height: 800px;
+  opacity: 1;
+  padding: 2rem;
 }
 
 .contacto form {
@@ -431,7 +455,7 @@ nav ul li a:hover {
 
 /* PIE DE PÁGINA */
 footer {
-  background: linear-gradient(135deg, var(--arena-mojada), var(--arena-volcanica));
+  background: linear-gradient(135deg, var(--terracota), var(--azul-mar));
   color: var(--blanco);
   text-align: center;
   padding: 3rem 2rem;
@@ -441,6 +465,57 @@ footer {
 footer p {
   margin: 0.8rem 0;
   font-size: 1.05rem;
+}
+
+/* BOTONES FLOTANTES */
+#btnUp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 18px;
+  font-size: 26px;
+  background: linear-gradient(135deg, var(--dorado-sol), var(--azul-mar));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 5px 20px rgba(74, 159, 189, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#btnUp:hover {
+  background: linear-gradient(135deg, var(--azul-mar), var(--dorado-sol));
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(74, 159, 189, 0.6);
+}
+
+#btnHome {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 65px;
+  height: 65px;
+  background: var(--blanco);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(74, 159, 189, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 5px solid var(--azul-mar);
+}
+
+#btnHome img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#btnHome:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(74, 159, 189, 0.5);
+  border-color: var(--dorado-sol);
 }
 
 /* RESPONSIVO */
@@ -481,54 +556,46 @@ footer p {
   .galeria h3 {
     font-size: 2.2rem;
   }
+
+  .sobre-mi-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mi-contenido p {
+    font-size: 1.05rem;
+  }
+
+  .contacto {
+    width: 95%;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .contacto-header h3 {
+    font-size: 2.2rem;
+  }
+
+  .contacto-texto {
+    font-size: 1rem;
+  }
+
+  .contacto form {
+    padding: 2rem 1.5rem;
+  }
+
+  .formulario-contenedor.activo {
+    padding: 1.5rem 1rem;
+  }
 }
 
-/* BOTONES FLOTANTES */
-#btnUp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 14px 18px;
-  font-size: 26px;
-  background: linear-gradient(135deg, var(--dorado-sol), var(--azul-mar));
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 5px 20px rgba(74, 159, 189, 0.4);
-  transition: all 0.3s ease;
-}
+@media (max-width: 600px) {
+  .sobre-mi-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
 
-#btnUp:hover {
-  background: linear-gradient(135deg, var(--azul-mar), var(--dorado-sol));
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 30px rgba(74, 159, 189, 0.6);
-}
-
-#btnHome {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  width: 65px;
-  height: 65px;
-  background: var(--blanco);
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(74, 159, 189, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  border: 5px solid var(--azul-mar);
-}
-
-#btnHome img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#btnHome:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 30px rgba(74, 159, 189, 0.5);
-  border-color: var(--dorado-sol);
+  .sobre-mi-contenido p {
+    font-size: 1.05rem;
+  }
 }
