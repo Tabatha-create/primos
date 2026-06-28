@@ -65,7 +65,7 @@ section p {
 }
 
 header {
-  background: var(--gradiente-principal);
+  background: linear-gradient(90deg, #F1B844,#8CCB5E);
   text-align: center;
   padding: 2rem 1rem 1rem;
   box-shadow: var(--sombra);
