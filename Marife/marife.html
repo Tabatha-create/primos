@@ -10,7 +10,9 @@
 <body>
   <header>
     <img src="img/otrologo.png" alt="Logo Marife" class="logo">
-    <h1 class="logo-visible">Marife y sus primores</h1>
+    <H2 class="subtitulo">
+      Manualidades llenas de color, ilusión y creatividad
+    </H2>
     <nav>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
@@ -23,73 +25,99 @@
   <main>    
     <section id="inicio" class="hero">
       <div class="contenido-hero">
-        <h2>Manualidades llenas de color, amor y creatividad</h2>
-        <p>Descubre nuestras piñatas y fantasías hechas a mano.</p>
+        <h2>Un mundo lleno de color e imaginación</h2>
+        <p>
+          Cada piñata y cada filigrana nacen de una idea,
+          del trabajo artesanal y del cariño puesto en cada detalle.
+        </p>
+
+        <a href="#creaciones" class="btn-principal">
+          Descubre mis creaciones
+        </a>
       </div>
     </section>
 
     <section id="productos" class="galeria">
-      <h3>Destacados</h3>
+      <h3>Mi universo creativo</h3>
+      <p class="intro">
+        Dos formas diferentes de crear... 
+        la misma ilusión en cada trabajo.
+      </p>
       <div class="productos">
-        <div class="producto-container">
-          <h4>Piñatas</h4>
-          <div class="producto">
+            <h3>Piñatas</h3>
+          <article class="producto">
             <img src="img/jarra.jpg" alt="Piñata">
-            <p>Piñatas personalizadas</p>
-            <a href="PinatasMarife/pinatas.html" class="btn-ver-mas">Ver más piñatas</a>
-          </div>
-        </div>
-        <div class="producto-container">
-          <h4>Fantasías</h4>
-          <div class="producto">
+            <p>Piñatas totalmente personalizadas para cumpleaños, comuniones, bautizos y cualquier celebración.
+            </p>
+            <a href="PinatasMarife/pinatas.html" class="btn-ver-mas">Entrar</a>
+          </article>
+          <article class="producto">
+            <h3>Filigranas</h3>
             <img src="img/conjunto1(3pz).jpg" alt="Bisutería">
-            <p>Bisutería artesanal</p>
-            <a href="filigranas.html" class="btn-ver-mas">Ver fantasías
-            </a>
-          </div>
+            <p>Pendientes, collares y complementos
+            hechos completamente a mano.</p>
+            <a href="filigranas.html" class="btn-ver-mas">Entrar</a>
+          </article>
         </div>
-      </div>
     </section>
 
-    <section id="sobre-mi" class="galeria">
-      <h3>Sobre mí</h3>
+    <section id="marife" class="sobre-mi">
       <div class="sobre-mi-contenido"> 
         <img src="img/marife.jpg" alt="Foto de Marife" class="foto-sobre-mi">
-        <p>Marife es una creadora inquieta, apasionada por todas las cosas hechas con las manos: las manualidades, los colores alegres y la originalidad. <br>Una persona con una sensibilidad muy especial que le da a cada artículo que realiza y en cada piñata su toque personal y divertido.</p>
+        <div> 
+          <h2>La persona detrás de cada creación</h2>
+          <p>
+            Desde siempre me han acompañado los colores,
+            las manualidades y la ilusión de crear algo único.
+          </p>
+          <p>
+            Cada piñata y cada filigrana están hechas
+            una a una, pensando en la persona que las recibirá. 
+          </p>
+          <p>
+            No trabajo en serie. Cada creación tiene su propia historia.
+          </p>
+        </div>
       </div>
     </section>
     
-    <section id="contacto" class="contacto">
-      <div class="container"> 
-        <h3>Contacto</h3>
-        <p>Si tienes alguna pregunta y quieres saber más de mis primores, ¡estaré encantada de conocerte y contestar lo que deseas!</p>
-        <br>
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <div class="contact-dropdown">
-            <button class="contact-trigger">Enviar mensaje</button>
-            <div class="dropdown-form">
-              <div class="form-container">
-                <h3 class="form-title">Envíame un mensaje</h3>
-                <form class="contact-form" id="contactForm">
-                  <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                  </div>
-                  <button type="submit" class="form-submit">Enviar</button>
-                </form>
-              </div>
+    <section class="encargos">
+      <h2>¿Tienes una idea?</h2>
+      <p>
+        Si estás buscando una piñata personalizada o una filigrana especial, cuéntame tu idea.
+        Me encantará ayudarte a hacerla realidad.
+      </p>
+      
+      <a href="#contacto" class="btn-principal">
+        Quiero hacer un encargo
+      </a>
+    </section>
+
+    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;"></div> 
+      <div class="contact-dropdown">
+        <button class="contact-trigger">Enviar mensaje</button>
+          <div class="dropdown-form">
+            <div class="form-container">
+              <h3 class="form-title">Envíame un mensaje</h3>
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Asunto</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Enviar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -98,9 +126,8 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Marife y sus primores</p>
-    <p>Esta página forma parte del proyecto familiar: "Galería Creativa".</p>
-    <p>Síguenos en redes: 💖 📸 📘</p>
+    <p>© 2026 Marife y sus Primores</p>
+    <p>Proyecto integrado en el universo EVA-AIXA</p>
   </footer>
 
   <button id="btnUp" title="Ir arriba">↑</button>
