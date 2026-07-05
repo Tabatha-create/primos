@@ -33,16 +33,25 @@ body {
   font-family: 'Fredoka', 'Baloo 2', sans-serif;
   color: var(--negro);
   background-color: var(--blanco);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
   height: 100%;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Lilita One', 'Fredoka', cursive;
+  letter-spacing: .5px;
 }
 
-h4, p {
+section h2 {
+  color: var(--morado);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1.15rem;
   font-family: 'Bubblegum Sans', 'Fredoka', cursive;
 }
 
@@ -60,7 +69,7 @@ main {
 }
 
 .hero,
-.galeria,
+.universo,
 .sobre-mi {
   background: transparent !important;
   margin: 0;
@@ -69,7 +78,8 @@ main {
 /* Estilos para el logo */
 .logo {
   display: block;
-  max-width: 300px;
+  width: 350px;
+  max-width: 90%;
   height: auto;
   margin: 0 auto;
 }
@@ -79,8 +89,8 @@ header {
   background: var(--gradiente-arcoiris);
   padding: 2rem 1rem 1rem;
   text-align: center;
-  border-radius: 20px;
-  margin: 0;
+  position: sticky;
+  z-index: 1000;
 }
 
 header h1 {
@@ -90,57 +100,45 @@ header h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.logo-visible {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.subtitulo {
+  color: white;
+  font-size: 1.5rem;
+  opacity: .95;
+  margin-bottom: 1.5rem;
 }
 
 /* Navegación */
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
-  padding: 0.5rem 0;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
-nav ul li {
-  margin: 0 2rem;
-}
-
-nav ul li a {
-  color: var(--blanco);
+nav a {
   text-decoration: none;
+  color: var(--blanco);
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  transition: 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
   background-color: var(--blanco);
   color: var(--morado);
 }
 
-/* Sección Hero */
 .hero {
-  display: flex;
-  align-items: center;
   padding: 3rem 2rem;
+  text-align: center;
   background-color: var(--gris-claro);
-  flex-wrap: wrap;
 }
 
 .contenido-hero {
-  flex: 1;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
   min-width: 200px;
   text-align: center;
 }
@@ -148,42 +146,41 @@ nav ul li a:hover {
 .hero h2 {
   color: var(--turquesa);
   margin-bottom: 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .hero p {
   color: var(--negro);
   margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 /* Botones */
-.boton {
+.btn-principal, 
+.btn-ver-mas {
   display: inline-block;
-  background-color: var(--rosa);
-  color: var(--blanco);
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 25px;
-  text-decoration: none;
+  background-color: var(--gradiente-arcoiris);
+  color: white;
   font-weight: bold;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
+  font-size: 1.1rem;
+  text-decoration: none;
 }
 
-.boton:hover {
-  background-color: var(--naranja);
-  transform: translateY(-3px);
+.btn-principal:hover,
+.btn-ver-mas:hover {
+  transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Sección Galería */
-.galeria {
+.universo {
   padding: 2.5rem 2rem;
   text-align: center;
 }
 
-.galeria h3 {
+.universo h3 {
   color: var(--morado);
   margin-bottom: 2rem;
   font-size: 1.8rem;
@@ -191,7 +188,7 @@ nav ul li a:hover {
   display: inline-block;
 }
 
-.galeria h3::after {
+.universo h3::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -242,11 +239,12 @@ nav ul li a:hover {
 }
 
 .producto img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
+  width: 220px;
+  height: 300px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
   border: 4px solid transparent;
   background: 
     linear-gradient(white, white) padding-box,
@@ -257,12 +255,12 @@ nav ul li a:hover {
   color: var(--turquesa);
   font-weight: bold;
   margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .btn-ver-mas {
   display: inline-block;
-background: 
-  linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
   var(--gradiente-arcoiris);
   color: var(--blanco);
   padding: 0.6rem 1.2rem;
@@ -274,26 +272,22 @@ background:
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.btn-ver-mas:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to right, var(--rosa), var(--naranja), var(--amarillo));
-}
-
-.producto:hover .btn-ver-mas {
+.producto:hover {
   background: linear-gradient(to right, var(--turquesa), var(--morado), var(--rosa));
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Sección Sobre Mí */
 .sobre-mi {
-  padding: 2rem 2rem; /* Añadir o ajustar */
+  padding: 5rem 2rem; /* Añadir o ajustar */
   text-align: center;
 }
 
 .sobre-mi-contenido {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 900px;
@@ -302,8 +296,8 @@ background:
 }
 
 .foto-sobre-mi {
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -317,10 +311,26 @@ background:
   min-width: 250px;
 }
 
-/* Sección de contacto */
+.universo {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.encargos {
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+}
+
 .contacto {
   margin: 0;
-  padding: 1rem 0 0 0;
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+}
+
+#contacto p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
 }
 
 .container {
@@ -329,12 +339,6 @@ background:
   margin: 0;
   color: var(--morado);
   font-size: 1.3rem;
-}
-
-.container h3 {
-  color: var(--morado);
-  margin-bottom: 1rem;
-  font-size: 2rem;
 }
 
 .container p {
