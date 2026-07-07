@@ -8,7 +8,7 @@
     --negro: #333333;
     
     /* Colores adicionales para mejor legibilidad */
-    --verde-suave: #f3f9ec;
+    --verde-suave: #e8f5e8;
     --texto-oscuro: #2c3e50;
     --azul-claro: #e3f2fd;
 }
@@ -188,46 +188,62 @@ li {
 /* AJUSTE: Galería estable y responsiva */
 /* ================================================= */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    columns: 4;
+    column-gap: 1.2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        columns: 2;
+    }
+}
+@media (max-width: 600px) {
+    .gallery {
+        columns: 1;
+    }
 }
 
 .gallery img {
-    margin: 1.5px;
-    border-radius: 25px;
+    margin: 0;
+    border-radius: 20px;
 }
 
 .card {
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center; 
-    padding: 0rem;
-    background-color: var(--blanco);
-    border: 2px solid var(--verde-manzana);
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+
+    background:
+        linear-gradient(var(--blanco), var(--blanco)) padding-box,
+        linear-gradient(135deg, #ff8ec6, #a8d95f) border-box;
+
+    border: 3px solid transparent;
     border-radius: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
-    transition: all .4s ease;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,.10);
+    overflow: hidden;
+
+    transition: transform .4s ease, box-shadow .4s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .thumbnail {
-    padding: 0.25rem;
     width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
+    height: auto;
+    display: block;
     cursor: pointer;
-    border: 2px solid var(--rosa);
     transition: transform .5s ease;
-    border-radius: 23px 23px 0 0; 
 }
 
 .card:hover .thumbnail {
-    transform: scale(1.04);
+    transform: translateY(-6px) rotate(1deg);
 }
 
 .thumbnail:hover {
@@ -335,83 +351,94 @@ li {
     transform: translateY(-50%);
 }
 
+/* ============================
+   PROCESO DE ELABORACIÓN
+============================ */
 
-/* Pasos para las piñatas */
-#pinnataCar {
-    border-radius: 15%;
-    padding: 0.25rem;
-    border: thick;
-    border-style: outset;
-    border-color: blueviolet;
-    max-width: 50%;
-}
-
-#procedimiento {
-    display: none;
-    margin-bottom: 20px;
-    text-align: center;
-    color: blueviolet;
-    font-weight: bolder;
-}
-
-ul {
-    counter-reset: pasos;
-    list-style-type: none;
-    padding: 0;
-}
-
-/* ================================================= */
-/* 🛠️ FIX: Estilo para la lista de pasos */
-/* ================================================= */
-.pasos {
-    /* Establece un ancho máximo para centrar el contenido en pantallas grandes */
+.proceso-creacion {
     max-width: 1100px;
-    margin: 0 auto; /* CRUCIAL: Centra el contenedor completo */
-    padding: 0 20px;
+    margin: 5rem auto;
+    padding: 0 2rem;
 }
 
-.pasos li {
-    display: flex;
-    /* justify-content: flex-start;  —> Lo eliminamos o lo mantenemos para que el texto y la imagen no se separen*/
-    justify-content: center;
-    align-items: center; /* Alinea verticalmente el texto y la imagen */
-    gap: 30px; /* Aumenta el espacio entre el texto y la imagen */
-    margin-bottom: 30px; 
-    
-    font-size: 1.2rem; 
-    color: var(--texto-oscuro);
-    text-align: left; 
+.proceso-creacion h2 {
+    text-align: center;
+    color: var(--rosa);
+    margin-bottom: 1rem;
 }
 
-.pasos img {
-    /* Hacemos la imagen más grande */
-    max-width: 450px; /* Incrementamos el ancho máximo */
-    width: 50%; 
-    height: 250px; 
-    
-    /* 💥 CAMBIO CLAVE: Muestra la imagen COMPLETA sin recortar */
-    object-fit: contain; 
-    
-    /* Agregamos un color de fondo para que las imágenes transparentes no se vean mal */
-    background-color: var(--blanco); 
-    border-radius: 10%;
-    padding: 0.15rem;
+.portada-proceso {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-/* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .pasos li {
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center;
+.pinata-final {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 25px;
+    border: 4px solid var(--verde-manzana);
+    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+.intro-proceso {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.pasos{
+    display:flex;
+    flex-direction:column;
+    gap:3rem;
+}
+
+.paso{
+    background:white;
+    border-radius:25px;
+    padding:2rem;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+.paso h3{
+    color:var(--verde-manzana);
+    margin-bottom:1rem;
+}
+
+.paso p{
+    margin-bottom:1.5rem;
+    line-height:1.7;
+}
+
+.imagenes-paso{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+}
+
+.imagenes-paso img{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    object-fit:cover;
+    transition:.4s;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+.imagenes-paso img:hover{
+    transform:scale(1.03);
+}
+
+@media (max-width:768px){
+
+    .imagenes-paso{
+        grid-template-columns:1fr;
     }
-    
-    .pasos img {
-        width: 80%; 
-        height: auto; 
-        max-width: 100%;
-        margin-top: 10px;
+
+    .paso{
+        padding:1.5rem;
     }
+
 }
 
 .formulario {
@@ -570,10 +597,6 @@ footer {
 #btnUp:hover {
   background-color: var(--verde);
 }
-
-/* ==========================================
-   PRESENTACIÓN
-========================================== */
 
 .presentacion {
     text-align: center;
