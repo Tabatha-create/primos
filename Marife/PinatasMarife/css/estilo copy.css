@@ -124,7 +124,7 @@ section {
 
 .columnas {
     flex: 1 1 300px;
-    background: var(--blancoo);
+    background: var(--blanco);
     border-radius: 25px;
     padding: 1.8rem;
     min-height: unset;
@@ -148,9 +148,20 @@ section {
     border-top: 6px solid var(--verde-manzana);
 }
 
+.subtitulo-card {
+    margin: 0.4rem 0 1rem;
+    padding: 0;
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--verde-manzana);
+    line-height: 1.5;
+}
+
 .columnas h2 {
-    font-size: 2rem;
-    margin-bottom: .6rem;
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--rosa);
 }
 
 .columnas p,
@@ -175,10 +186,10 @@ section {
 }
 
 .iconos {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     display: block;
-    margin: .5rem auto 1rem;
+    margin: 0 auto 1.2rem;
     border-radius: 50%;
 }
 
@@ -574,7 +585,6 @@ footer {
 
 .texto-resumen,
 .texto-completo {
-    line-height: 1.6;
     background-color: transparent;
     line-height: 1.8;
     font-size: 1rem;
@@ -598,7 +608,7 @@ footer {
 }
 
 #btnUp:hover {
-  background-color: var(--verde);
+  background-color: var(--verde-manzana);
 }
 
 .presentacion {
