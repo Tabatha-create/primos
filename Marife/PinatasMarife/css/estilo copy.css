@@ -90,10 +90,22 @@ section {
     text-align: center;
 }
 
-.historia {
-    padding: 2rem 0;
+.historia-pinatas {
+    padding: 3rem 0;
     background: transparent;
     color: var(--texto-oscuro);
+}
+
+.historia-pinatas > h2 {
+    margin-bottom: .8rem;
+}
+
+.intro-historia {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 @media (min-width: 1200px) {
@@ -114,7 +126,8 @@ section {
     flex: 1 1 300px;
     background: var(--blancoo);
     border-radius: 25px;
-    padding: 2rem;
+    padding: 1.8rem;
+    min-height: unset;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     transition: transform .3s;
 }
@@ -133,6 +146,11 @@ section {
 
 .columnas:nth-child(3) {
     border-top: 6px solid var(--verde-manzana);
+}
+
+.columnas h2 {
+    font-size: 2rem;
+    margin-bottom: .6rem;
 }
 
 .columnas p,
@@ -157,10 +175,10 @@ section {
 }
 
 .iconos {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     display: block;
-    margin: 1rem auto;
+    margin: .5rem auto 1rem;
     border-radius: 50%;
 }
 
@@ -541,8 +559,10 @@ footer {
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
-    display: inline-block;
-    margin-left: 5px;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0;
     transition: color 0.3s ease;
     background-color: transparent;
 }
@@ -556,6 +576,8 @@ footer {
 .texto-completo {
     line-height: 1.6;
     background-color: transparent;
+    line-height: 1.8;
+    font-size: 1rem;
 } 
 
 #btnUp {
