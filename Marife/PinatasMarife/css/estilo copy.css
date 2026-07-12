@@ -420,12 +420,12 @@ li {
 
 .portada-proceso {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .frase-final{
     display: inline-block;
-    max-width: 420px;
+    max-width: 300px;
     margin-top: .8rem;
     padding: .6rem 1.2rem;
     border-radius: 25px;
@@ -548,10 +548,54 @@ li {
     height: 10rem;
 }
 
-footer {
+.despedida{
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.8rem;
     text-align: center;
-    font-size: small;
-    color: #f817a9;
+    background:linear-gradient(
+        90deg,
+        rgba(255,111,181,.10),
+        rgba(255,184,77,.10),
+        rgba(159,211,86,.10));
+    border-radius: 30px;
+}
+
+.despedida h2{
+    color: var(--rosa);
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.despedida p{
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: var(--texto-oscuro);
+    font-size: 1.1rem;
+}
+
+.mensaje-final{
+    margin-top: 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+footer{
+    margin-top: 3rem;
+    padding: 1.2rem;
+    background: linear-gradient(
+        90deg,
+        #ff6fb5,
+        #ffd166,
+        #9fd356,
+        #6dd5ed,
+        #b388ff);
+    text-align: center;
+    color: white;
+    font-size: .95rem;
+    font-weight: 600;
 }
 
 /* ========== ESTILOS PARA TEXTO EXPANDIBLE ========== */
@@ -661,7 +705,7 @@ footer {
 
 .encargos{
     max-width: 1200px;
-    margin: 5rem auto;
+    margin: 2rem auto;
     padding: 0 2rem;
 }
 
