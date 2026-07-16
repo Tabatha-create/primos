@@ -6,6 +6,7 @@
     --naranja: #FFA500;
     --blanco: #FFFFFF;
     --negro: #333333;
+    --rosa-claro: #ffe3f1;
     
     /* Colores adicionales para mejor legibilidad */
     --verde-suave: #e8f5e8;
@@ -24,12 +25,12 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-    background-color: var(--verde-suave);
+    background-color: #fdfbf7;
     color: var(--texto-oscuro);
 }
 
 header {
-    background-color: var(--rosa);
+    background: linear-gradient(to bottom, #fcaed5, #FFFFFF 50%);
     color: var(--blanco);
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -98,6 +99,8 @@ section {
 
 .historia-pinatas > h2 {
     margin-bottom: .8rem;
+    text-align: center;
+    color: var(--rosa);
 }
 
 .intro-historia {
@@ -120,32 +123,44 @@ section {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .columnas {
     flex: 1 1 300px;
+    max-width: 340px;
     background: var(--blanco);
     border-radius: 25px;
     padding: 1.8rem;
     min-height: unset;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     transition: transform .3s;
+    box-sizing: border-box;
 }
 
 .columnas:hover {
     transform: translateY(-6px);
 }
 
-.columnas:nth-child(1) {
+.tarjeta-origen {
     border-top: 6px solid var(--rosa);
 }
 
-.columnas:nth-child(2) {
+.tarjeta-simbolismo {
     border-top: 6px solid #ffd23f;
 }
 
-.columnas:nth-child(3) {
-    border-top: 6px solid var(--verde-manzana);
+.tarjeta-hoy {
+    border-top: 6px solid #dfb6ff;
+}
+
+.columnas h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--rosa);
+    text-align: center;
 }
 
 .subtitulo-card {
@@ -158,71 +173,75 @@ section {
     line-height: 1.5;
 }
 
-.columnas h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--rosa);
-}
-
-.columnas p,
-.columnas li {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #555;
-}
-
-.columnas p{
-    text-align: left;
-}
-
-.columnas ul{
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.columnas ol{
-    margin-left: 1.5rem;
-}
-
 .iconos {
     width: 75px;
     height: 75px;
     display: block;
     margin: 0 auto 1.2rem;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.iconos .img {
-    display: inline-block;
+.columnas p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    text-align: left;
 }
 
-h2 {
-    text-align: center;
-    color: var(--rosa);
+.lista-simbolos {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 1rem;
+.lista-simbolos > li {
+    padding: 0.4rem 0;
+    color: #555;
 }
 
-ul ol {
-    padding: 1rem;
-    margin-left: 20px;
+.lista-simbolos ol {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
 }
 
-li {
-    padding: 0.25rem 1rem;
-    color: var(--texto-oscuro);
-    border-radius: 15px;
+.lista-simbolos li em {
+    color: #8b46cd; /* Estilo alegre para los nombres de los pecados */
+    font-weight: bold;
 }
 
-.centrar-imagen {
-    padding: 0.5rem;
+/* ==========================================================================
+   ESTILOS PARA EL TEXTO EXPANDIBLE (JAVASCRIPT / INTERACTIVIDAD)
+   ========================================================================== */
+
+/* Botones interactivos de "Descubrir más" y "Mostrar menos" */
+.btn-expandir, .btn-contraer {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    color: var(--rosa);
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.btn-expandir:hover, .btn-contraer:hover {
+    transform: scale(1.03);
+    color: var(--naranja); /* Cambia al color interactivo de tus redes sociales */
+}
+
+/* Clase utilitaria para esconder el bloque de texto completo al cargar la página */
+.oculto {
+    display: none;
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1200px) {
+    .contenedor-servicios {
+        width: 1100px;
+        margin: 2rem auto;
+    }
 }
 
 /* ================================================= */
@@ -455,7 +474,7 @@ li {
 }
 
 .paso{
-    background:white;
+    background: var(--azul-claro);
     border-radius:25px;
     padding:2rem;
     box-shadow:0 8px 18px rgba(0,0,0,.08);
@@ -549,39 +568,47 @@ li {
 }
 
 .despedida{
-    max-width: 900px;
-    margin: 4rem auto 0;
-    padding: 2.5rem 2rem;
     text-align: center;
+    padding: 60px 20px;
+}
+
+.contenedor-despedida {
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .despedida h2{
     color: var(--rosa);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
 }
 
-.despedida > p{
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.8;
+.introduccion, .texto-contacto {
     font-size: 1.1rem;
-    color: var(--texto-oscuro);
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
 .firma {
-    margin-top: 1.8rem;
-    font-size: 1.15rem;
     font-style: italic;
-    font-weight: 600;
-    color: var(--naranja);
+    font-size: 1.15rem;
+    background-color: #f7f3fb;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 40px;
 }
 
-.contacto-final p{
-    max-width: 650px;
-    margin: 0 auto 1.8rem;
-    line-height: 1.7;
-    color: var(--texto-oscuro);
+.llamada-accion {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
 }
 
 .redes-sociales a{
@@ -611,6 +638,7 @@ footer{
     padding:1.2rem;
     text-align:center;
     border-top:1px solid rgba(0,0,0,.08);
+    background: #a5f3fc;
 }
 
 footer p{
