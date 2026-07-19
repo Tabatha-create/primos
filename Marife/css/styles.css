@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  font-family: 'Fredoka', 'Baloo 2', sans-serif;
+  font-family: 'Lilita One', 'Fredoka';
   color: var(--negro);
   background: #fdfdfd;
   line-height: 1.7;
@@ -51,7 +51,6 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Lilita One', 'Fredoka', cursive;
   letter-spacing: .5px;
-
 }
 
 section h2 {
@@ -104,12 +103,12 @@ header {
 header h1 {
   color: white;
   margin-top: 0.4rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitulo {
-  color: white;
+  color: var(--turquesa);
   font-size: 1rem;
   margin-top: .2rem;
   opacity: .95;
@@ -135,7 +134,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: var();
   font-size: 1rem;
   font-weight: bold;
   padding: .5rem 1rem;
@@ -460,6 +459,10 @@ footer {
 
 footer p {
   margin: 0.5rem 0;
+}
+
+footer h4 {
+  font-size: 18px;
 }
 
 /* Botones flotantes */
