@@ -9,3 +9,18 @@
     </p>
 
   </footer>
+
+  :root {
+    --rosa: #fcaed5;
+    --verde-manzana: #c5ed85;
+    --azul-cielo: #b1daea;
+    --naranja: #FFA500;
+    --blanco: #FFFFFF;
+    --negro: #333333;
+    --rosa-claro: #ffe3f1;
+    
+    /* Colores adicionales para mejor legibilidad */
+    --verde-suave: #e8f5e8;
+    --texto-oscuro: #2c3e50;
+    --azul-claro: #e3f2fd;
+}

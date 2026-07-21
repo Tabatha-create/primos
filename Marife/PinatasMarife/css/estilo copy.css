@@ -1,16 +1,17 @@
 /* Variables de colores mejorados para legibilidad */
 :root {
     --rosa: #fcaed5;
+    --rosa-oscuro: #c2437e;
     --verde-manzana: #c5ed85;
     --azul-cielo: #b1daea;
-    --naranja: #FFA500;
+    --naranja: #FFC983;
     --blanco: #FFFFFF;
-    --negro: #333333;
+    --negro: #4a3f4d;
     --rosa-claro: #ffe3f1;
     
     /* Colores adicionales para mejor legibilidad */
     --verde-suave: #e8f5e8;
-    --texto-oscuro: #2c3e50;
+    --texto-oscuro: #4a3f4d;
     --azul-claro: #e3f2fd;
 }
 
@@ -25,15 +26,15 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #fdfbf7;
+    background-color:white;
     color: var(--texto-oscuro);
 }
 
 header {
-    background: linear-gradient(to bottom, #fcaed5, #FFFFFF 50%);
-    color: var(--blanco);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
+    background: linear-gradient(to bottom, #ffe3f1, #FFFFFF 75%);
+    color: var(--rosa-oscuro);
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
 }
 
 h1 {
@@ -44,7 +45,8 @@ h1 {
 }
 
 .navegacion {
-    background-color: var(--verde-manzana);
+    background-color: #FFFFFF;
+    border: 1px solid var(--verde-manzana);
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -67,8 +69,8 @@ h1 {
 }
 
 .navegacion a:hover {
-    color: white;
-    background-color: var(--rosa);
+    color: var(--rosa-oscuro);
+    background-color: var(--rosa-claro);
 }
 
 .banner {
@@ -100,7 +102,7 @@ section {
 .historia-pinatas > h2 {
     margin-bottom: .8rem;
     text-align: center;
-    color: var(--rosa);
+    color: var(--rosa-oscuro);
 }
 
 .intro-historia {
@@ -249,17 +251,13 @@ section {
     width: 100%;
     margin-bottom: 1.5rem;
     break-inside: avoid;
-
     background:
         linear-gradient(var(--blanco), var(--blanco)) padding-box,
         linear-gradient(135deg, #ff8ec6, #a8d95f) border-box;
-
     border: 3px solid transparent;
     border-radius: 25px;
-
     box-shadow: 0 6px 16px rgba(0,0,0,.10);
     overflow: hidden;
-
     transition: transform .4s ease, box-shadow .4s ease;
 }
 
@@ -322,7 +320,7 @@ section {
 }
 
 #masPignatas:hover {
-    background-color: darkorange;
+    background-color: var(--naranja);
 }
 
 
