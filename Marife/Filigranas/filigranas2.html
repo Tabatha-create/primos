@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guiños Marife — Filigranas de papel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo-fantasias.css">
+</head>
+
+<body>
+  <header>
+    <h1>Guiños Marife</h1>
+    <section class="banner">
+        <img src="img/fantasias/fantasias.png" alt="Banner principal de Fantasías Marife">
+    </section>
+    <p>Arte en filigranas de papel — pendientes, mandalas y piezas únicas hechas a mano</p>
+    
+</header>
+    <nav class="navegacion">
+      <a href="Marife.html">Inicio</a>
+      <a href="#galeria">Galería</a>
+      <a href="#arte-papel">El arte detrás del papel</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+  <section class="historia">
+    <h2>Fantasías hechas de papel</h2>
+    <p>En <strong>Fantasías Marife</strong> transformamos el papel en arte. Cada pieza es elaborada con la técnica de <em>filigrana</em> o <em>quilling</em>,
+      donde finas tiras de papel se enrollan, moldean y combinan para formar pendientes, colgantes, mandalas y detalles decorativos únicos. Cada pieza es única pues son manos creadoras las que dan vida al papel.</p>
+  </section>
+
+  <section id="inicio">
+  <h2>Historia de las Filigranas</h2>
+  <div class="historia" id="historia">
+    <section class="contenedor-servicios">
+
+      <!-- Columna 1 -->
+      <div class="columnas">
+        <h2>Origen</h2>
+        <img class="iconos" src="img/fantasias/historia-mini.png" alt="Historia">
+        <div class="texto-expandible">
+          <p>El quilling, o filigrana de papel, nació en los monasterios europeos entre los siglos XV y XVI. Monjes y monjas utilizaban tiras de papel dorado de los bordes de libros religiosos para crear decoraciones enrolladas que imitaban los ornamentos metálicos. Con el tiempo, esta técnica se convirtió en una forma artística refinada, especialmente popular durante la época victoriana.</p>
+        </div>
+        <button class="leer-mas">Leer más</button>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="columnas">
+        <h2>Técnica Moderna</h2>
+        <img class="iconos" src="img/fantasias/herramientasModernas-mini.png" alt="Técnica moderna">
+        <div class="texto-expandible">
+          <p>La joyería en quilling transforma el papel en arte portátil. Cada pieza combina tradición artesanal con diseño contemporáneo, ofreciendo accesorios que destacan por ser:</p>
+          <ol>
+            <li><em>Ultraligeros:</em> Cómodos para llevar todo el día sin molestias.</li>
+            <li><em>Personalizables:</em> Diseños únicos en cualquier combinación de colores.</li>
+            <li><em>Irrepetibles:</em> Hechos a mano, cada pieza tiene su propia identidad.</li>
+            <li><em>Sostenibles:</em> Elaborados con materiales respetuosos con el medio ambiente.</li>
+            <li><em>Hipoalergénicas:</em> Tratados con barnices protectores para cuidar tu piel.</li>
+            <li><em>Duraderos:</em> Reforzados para resistir el uso diario.</li>
+            <li><em>Versátiles:</em> Desde estilos minimalistas hasta piezas llamativas que marcan tendencia.</li>
+          </ol>
+        </div>
+        <button class="leer-mas">Leer más</button>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="columnas">
+        <h2>Ventajas</h2>
+        <img class="iconos" src="img/celebmini.jpg" alt="Icono conclusión">
+        <div class="texto-expandible">
+          <p>La joyería de quilling es una alternativa fresca y original a la bisutería tradicional. Gracias a su peso ultraligero, es perfecta para pendientes largos y collares llamativos sin causar molestias. <br>
+          Su amplia gama de colores permite crear piezas que se adaptan a cualquier estilo, desde looks casuales hasta atuendos elegantes.<br>
+          Además, al ser completamente personalizable, cada diseño es único y puede reflejar la personalidad de quien lo lleva. La técnica permite explorar desde formas geométricas modernas hasta composiciones orgánicas y naturales, ofreciendo opciones para todos los gustos.</p>
+        </div>
+        <button class="leer-mas">Leer más</button>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- Script para el comportamiento -->
+  <script>
+    document.querySelectorAll('.leer-mas').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const texto = boton.previousElementSibling;
+        texto.classList.toggle('expandido');
+        boton.textContent = texto.classList.contains('expandido') ? 'Leer menos' : 'Leer más';
+      });
+    });
+  </script>
+</section>
+
+<main class="trabajos">
+    <h2 id="galeria">Galería de Creaciones</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="img/fantasias/conjunto2(3pz)mini.jpg" alt="Pendientes de filigrana" class="thumbnail" data-full="img/fantasias/pendientes1.jpg">
+      </div>
+      <div class="card">
+        <img src="img/fantasias/mandalamini.jpg" alt="Mandala artesanal" class="thumbnail" data-full="img/mandala1-grande.jpg">
+      </div>
+      <div class="card">
+        <img src="img/fantasias/pendientes1mini.jpg" alt="Colgante de filigrana" class="thumbnail" data-full="img/colgante1-grande.jpg">
+      </div>
+      <div class="card">
+        <img src="" alt="Posavasos decorativo" class="thumbnail" data-full="img/posavasos1-grande.jpg">
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para las imágenes -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img class="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <section id="arte-papel" class="pasos">
+    <h2>El arte detrás del papel</h2>
+    <ul>
+      <li>
+        <p>
+          En la filigrana, cada detalle cuenta. Se utilizan herramientas como enrolladores, pinzas y tiras de papel de distintos colores y grosores para dar forma a cada diseño.
+        </p>
+        <img src="img/herramientas-filigrana.jpg" alt="Herramientas para filigrana de papel">
+      </li>
+      <li>
+        <p>
+          Las tiras se enrollan con cuidado y se moldean en figuras que, al unirse, forman composiciones únicas. Este proceso combina paciencia, precisión y creatividad.
+        </p>
+        <img src="img/proceso-filigrana.jpg" alt="Proceso de elaboración de filigrana">
+      </li>
+    </ul>
+  </section>
+
+  <section class="procedimiento-container" id="proceso">
+            <h2>Proceso de Creación</h2>
+            <div id="procedimiento">
+                <div class="pasos">
+                    <div class="paso-item">
+                        <div class="paso-texto">1. Diseño y selección de colores según el estilo deseado y la ocasión.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso1.jpg" alt="Paso 1 - Diseño">
+                            <img src="img/Quilling/Proceso/paso1-2.jpg" alt="Paso 1 - Colores">
+                        </div>
+                    </div>
+                    
+                    <div class="paso-item">
+                        <div class="paso-texto">2. Corte de las cintas de papel en el ancho y largo necesarios para cada elemento.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso2.jpg" alt="Paso 2 - Corte">
+                            <img src="img/Quilling/Proceso/paso2-2.jpg" alt="Paso 2 - Preparación">
+                        </div>
+                    </div>
+                    
+                    <div class="paso-item">
+                        <div class="paso-texto">3. Enrollado de las cintas con herramientas especializadas para crear formas básicas.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso3.jpg" alt="Paso 3 - Enrollado">
+                            <img src="img/Quilling/Proceso/paso3-2.jpg" alt="Paso 3 - Formas">
+                        </div>
+                    </div>
+                    
+                    <div class="paso-item">
+                        <div class="paso-texto">4. Modelado y creación de formas específicas: lágrimas, hojas, pétalos, espirales.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso4.jpg" alt="Paso 4 - Modelado">
+                            <img src="img/Quilling/Proceso/paso4-2.jpg" alt="Paso 4 - Formas">
+                        </div>
+                    </div>
+                    
+                    <div class="paso-item">
+                        <div class="paso-texto">5. Ensamblaje de los elementos para formar el diseño final de la joya.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso5.jpg" alt="Paso 5 - Ensamblaje">
+                            <img src="img/Quilling/Proceso/paso5-2.jpg" alt="Paso 5 - Unión">
+                        </div>
+                    </div>
+                    
+                    <div class="paso-item">
+                        <div class="paso-texto">6. Aplicación de barniz protector y montaje en herrajes de calidad para el acabado final.</div>
+                        <div class="paso-imagenes">
+                            <img src="img/Quilling/Proceso/paso6.jpg" alt="Paso 6 - Barnizado">
+                            <img src="img/Quilling/Proceso/paso6-2.jpg" alt="Paso 6 - Montaje">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  <footer>
+    &copy; 2025 Fantasías Marife — Filigranas de papel hechas con amor y dedicación.
+  </footer>
+
+<!-- BOTÓN SUBIR (flecha hacia arriba con degradado) -->
+<div id="boton-subir" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48" aria-label="Subir página">
+    <defs>
+      <style>
+        .flecha {
+          fill: none;
+          stroke: #FFFFFF;
+          stroke-width: 4.5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transition: all 0.25s ease;
+        }
+        #boton-subir:hover .flecha {
+          transform: translateY(-3px);
+        }
+      </style>
+    </defs>
+    <path class="flecha" d="M12 28 L24 16 L36 28" />
+  </svg>
+</div>
+
+<style>
+  /* === ESTILOS DEL BOTÓN FLOTANTE === */
+  #boton-subir {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #FF6F91, #FF9671, #3AC0C0);
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    padding: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Aparece con scroll */
+  #boton-subir.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #boton-subir:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  }
+</style>
+
+<script>
+  // === MOSTRAR / OCULTAR BOTÓN SEGÚN SCROLL ===
+  const botonSubir = document.getElementById('boton-subir');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      botonSubir.classList.add('visible');
+    } else {
+      botonSubir.classList.remove('visible');
+    }
+  });
+</script>
+
+  <script src="js/js-fantasias.js"></script>
+</body>
+</html>
+
+
