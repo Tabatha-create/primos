@@ -29,7 +29,7 @@ const thumbnails = document.querySelectorAll('.thumbnail');
 thumbnails.forEach(thumbnail => {
   thumbnail.addEventListener('click', () => {
     modal.style.display = "block";
-    modalImg.src = thumbnail.getAttribute('data-full');
+    modalImg.src = thumbnail.src;
     modalImg.alt = thumbnail.alt;
   });
 });
