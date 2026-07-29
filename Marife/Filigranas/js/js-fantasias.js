@@ -47,9 +47,21 @@ window.onclick = (event) => {
 };
 
 // ==============================
-// SECCIÓN "EL ARTE DETRÁS DEL PAPEL"
-// (Espacio para futuras funciones)
+// Botones "Descubrir más"
 // ==============================
-// Si más adelante quieres agregar interacciones,
-// como mostrar videos del proceso o animaciones,
-// puedes hacerlo aquí.
+
+const botonesVerMas = document.querySelectorAll('.btn-ver-mas');
+
+botonesVerMas.forEach(boton => {
+    boton.addEventListener('click', () => {
+        const categoria = boton.closest('.categoria');
+        const galeriaOculta = categoria.querySelector('.gallery-oculta');
+        galeriaOculta.classList.toggle('visible');
+        if (galeriaOculta.classList.contains('visible')) {
+            boton.textContent = "✨ Ver menos";
+        } else {
+            const titulo = categoria.querySelector('h3').textContent;
+            boton.textContent = `✨ Descubrir más ${titulo.replace(/^[^\w]+/, '').toLowerCase()}`;
+        }
+    });
+});
