@@ -20,6 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Bubblegum Sans', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 body {
@@ -31,8 +32,8 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--rosa-claro, var(--rosa), var(--naranja)));
-    color: var(--rosa-oscuro);
+    background: linear-gradient(90deg, #F7c6df, #F9d8c4, #Fbe8b5, #cbebdd);
+    color: var(--blanco);
     padding: 1.5rem 1rem;
     border-radius: 16px;
 }
@@ -44,8 +45,12 @@ h1 {
     font-size: 2.5rem;
 }
 
+h2 {
+    letter-spacing: 1px;
+}
+
 .navegacion {
-    background-color: #FFFFFF;
+    background: linear-gradient(90deg, rgba(255,255,255,.75), rgba(255,230,241,.75), rgba(255,245,215,.75),rgba(220,245,235,.75));
     border: 1px solid var(--verde-manzana);
     width: 100%;
     top: 0;
@@ -288,26 +293,23 @@ section {
 
 #contenedorPignatas {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 15px; 
-    padding: 20px 0;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.2rem;
+    max-width: 900px;
+    margin: 2rem auto;
 }
 
-#contenedorPignatas img {
-    max-width: 300px; 
-    height: auto; 
-    border-radius: 25px;
-    padding: 5px;
-    border: 1px solid var(--verde-manzana);
-    background-color: var(--verde-suave); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#contenedorPignatas .card {
+    flex: 1;
+    min-width: 0;
 }
 
 #masPignatas {
-    background-color: var(--naranja);
-    color: var(--blanco);
-    border: none;
+    background: linear-gradient( #f7afd4, #facaad, #f7dd9c, #b4ead3);
+    color: var(--rosa-oscuro);
+    border-color: var(--azul-cielo);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     padding: 10px 20px;
     margin: 20px auto;
     cursor: pointer;
@@ -316,11 +318,11 @@ section {
     display: block; 
     width: fit-content; 
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 #masPignatas:hover {
-    background-color: var(--naranja);
+    background: linear-gradient(135deg, #F7c6df, #F9d8c4, #Fbe8b5, #cbebdd);
 }
 
 
@@ -557,8 +559,9 @@ section {
 
 .llamada-accion {
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: bolder;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .redes-sociales {
@@ -575,8 +578,8 @@ section {
     align-items:center;
     justify-content:center;
     border-radius:50%;
-    background:var(--rosa);
-    color:white;
+    background: linear-gradient( #f7afd4, #facaad, #f7dd9c, #b4ead3);
+    color: var(--rosa-oscuro);
     text-decoration:none;
     transition:.3s;
 }
@@ -646,9 +649,9 @@ footer p{
   right: 30px;
   padding: 10px 15px;
   font-size: 24px;
-  background-color: var(--rosa);
-  color: white;
-  border: none;
+  background: linear-gradient( #f7afd4, #facaad, #f7dd9c, #b4ead3);
+  color: var(--rosa-oscuro);
+  border-color: var(--azul-cielo);
   border-radius: 50%;
   cursor: pointer;
   display: none;

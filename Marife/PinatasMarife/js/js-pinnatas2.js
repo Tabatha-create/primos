@@ -79,3 +79,19 @@ document.getElementById('pinnataCar').addEventListener('click',
         }
     });
 // Fin visualización del procedimiento piñatas
+
+// Pasos elaboración piñatas
+document.getElementById('pinnataCar').addEventListener('click',
+    function() {
+        var procedimiento =
+    document.getElementById('procedimiento');
+        
+        // FIX: Se modifica la condición para incluir la cadena vacía (""), 
+        // que es el valor inicial cuando el display se establece en el CSS.
+        if(procedimiento.style.display === 'none' || procedimiento.style.display === '') {
+            procedimiento.style.display = 'block';
+        } else {
+            procedimiento.style.display = 'none';
+        }
+    });
+// Fin visualización del procedimiento piñatas
