@@ -814,15 +814,27 @@ footer p{
 
 @media (max-width: 768px) {
 
+    .navegacion {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem 0.5rem;
+        padding: 0.4rem 0.3rem;
+        box-sizing: border-box;
+    }
+
+    .navegacion a {
+        flex: 0 0 auto;
+        padding: 0.4rem 0.rem;
+        font-size: 0.9rem;
+    }
+
     /* 1. SECCIÓN: HISTORIA DE LAS PIÑATAS (Tu nuevo Carrusel Horizontal) */
     .contenedor-servicios {
-        flex-wrap: nowrap !important;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 10px 20px 25px 20px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
+        align-items: center;
         gap: 1.5rem;
+        padding: 10px 1rem 25px;
     }
 
     .contenedor-servicios::-webkit-scrollbar {
@@ -830,9 +842,9 @@ footer p{
     }
 
     .columnas {
-        flex: 0 0 290px;
-        max-width: 290px;
-        scroll-snap-align: center;
+        width: 100%;
+        max-width: 340px;
+        flex: none;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
     }
 
@@ -858,16 +870,32 @@ footer p{
         padding: 0 1rem;
     }
 
+    .pasos {
+        grid-template-columns: 1fr;
+    }
+
     .paso {
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    .paso p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
     }
 
     .imagenes-paso {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
+    .imagenes-paso img {
+        width: 100%;
+        max-width: 250px;
+        max-height: none;
+        padding: .4rem;
+    }
 
     /* 4. SECCIÓN: DESPEDIDA Y REDES SOCIALES */
     .despedida h2 {
@@ -886,12 +914,7 @@ footer p{
 }
 
 @media (max-width: 600px) {
-    /* --- Galería extrema en pantallas muy pequeñas --- */
-    .gallery {
-        columns: 1;
-    }
     
-    /* Pequeño ajuste para tarjetas en móviles muy estrechos */
     .columnas {
         flex: 0 0 260px;
         max-width: 260px;

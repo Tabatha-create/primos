@@ -25,23 +25,33 @@ window.onclick = (event) => {
 let indice = 0; 
 
 const pignatas = [ 
-    'img/polar.jpg', 
+    'img/MunNieve.jpg', 
     'img/casette.jpg', 
     'img/comunion1.jpg', 
     'img/comunion2.jpg', 
     'img/cesta.jpg', 
     'img/pinata54.jpg', 
-    'img/pinata63.jpg' 
-]; 
+    'img/pinata63.jpg',
+    'img/pinata65.jpg',
+    'img/pinata58.jpg',
+    'img/pinata61.JPG',
+    'img/Kitty.jpg',
+    'pinata76.jpg',
+];
 
 const nombresPignatas = [ 
-    'Polar', 
+    'Muñeco de Nieve', 
     'Casette', 
-    'Comunión', 
-    'Comunión', 
+    'Comunión-1', 
+    'Comunión-2', 
     'Cesta', 
-    'Piñata', 
-    'Piñata' 
+    'Mariposa', 
+    'Evil Minion',
+    'Batman',
+    'Conejo',
+    'Tortuga Ninja',
+    'Hello Kitty',
+    'Power Ranger'
 ]; 
 
 document.getElementById('masPignatas').addEventListener('click', function(e) { 
