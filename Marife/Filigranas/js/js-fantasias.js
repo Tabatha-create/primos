@@ -1,7 +1,3 @@
- // ==============================
-// FANTASÍAS MARIFE — FILIGRANAS
-// Script del modal de imágenes
-// ==============================
 
  function expandirTexto(elemento) {
     const contenedor = elemento.closest('.texto-expandible');
