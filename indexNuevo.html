@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería Creativa Familiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloNuevo1.css" />
+</head>
+<body class="portada">
+
+<header class="cabecera-comun">
+  <div class="header-content">
+    <h1>Galería Creativa de los Primos</h1>
+    <p>La inspiración nace en Valle Gran Rey</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#primos">Los primos</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#arbol">Nuestro árbol</a></li>
+    <li><a href="#anecdotas">Anécdotas</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- Los primos: una casita por cada uno. Para añadir uno, copia un bloque <article> completo.
+       Los colores se reparten solos (amarillo, rosa, durazno, lima). -->
+  <section id="primos" class="primos-seccion">
+    <h2>Los primos</h2>
+    <p class="intro">Cada uno con lo suyo. Entra en su casita y mira lo que hace.</p>
+    <div class="primos">
+
+      <article class="casita" id="nery">
+        <p class="oficio">🪴 Cerámica</p>
+        <h3><a href="Nery/nery.html">Nery</a></h3>
+        <p>Artista ceramista con un estilo natural y sensible.</p>
+        <a class="ver" href="Nery/nery.html">Ver su obra →</a>
+      </article>
+
+      <article class="casita" id="marife">
+        <p class="oficio">🎊 Piñatas y filigranas</p>
+        <h3><a href="Marife/marife.html">Marife</a></h3>
+        <p>Artesana de piñatas, filigranas y bisutería.</p>
+        <a class="ver" href="Marife/marife.html">Explorar →</a>
+      </article>
+
+      <article class="casita" id="jramon">
+        <p class="oficio">🪵 Madera</p>
+        <h3><a href="JR/jr.html">J.Ramón</a></h3>
+        <p>Creador: coches, juguetes de madera, portamóviles.</p>
+        <a class="ver" href="JR/jr.html">Explorar →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Antes y ahora -->
+  <section id="historia" class="historia">
+    <h2>De aquí salieron nuestros padres</h2>
+    <p class="intro">La Calera, Valle Gran Rey, La Gomera. Ha cambiado de colores, pero sigue siendo nuestro lugar.</p>
+    <div class="antes-ahora">
+      <figure>
+        <img src="img/laCalera-1955.jpg" alt="La Calera en 1955, en blanco y negro" loading="lazy">
+        <figcaption>1955</figcaption>
+      </figure>
+      <figure>
+        <img src="img/LaCalera2026.jpeg" alt="La Calera hoy, con casas de colores y palmeras" loading="lazy">
+        <figcaption>2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Árbol genealógico. Cambia los nombres de ejemplo por los reales.
+       Cada <li class="rama"> es uno de los 5 hermanos; sus hijos van en <ul class="hijos">.
+       Si el primo ya tiene página, envuelve su nombre en <a href="...">. -->
+  <section id="arbol" class="arbol-seccion">
+    <h2>Nuestro árbol</h2>
+    <p class="intro">De una casa de La Calera salieron cinco ramas.</p>
+    <div class="arbol">
+      <ul class="raiz">
+        <li>
+          <span class="nodo nodo-raiz">Abuelo y Abuela</span>
+          <ul class="ramas">
+            <li class="rama">
+              <span class="nodo">Hermano/a 1</span>
+              <ul class="hijos">
+                <li><span class="nodo"><a href="Nery/nery.html">Nery</a></span></li>
+              </ul>
+            </li>
+            <li class="rama">
+              <span class="nodo">Hermano/a 2</span>
+              <ul class="hijos">
+                <li><span class="nodo"><a href="Marife/marife.html">Marife</a></span></li>
+              </ul>
+            </li>
+            <li class="rama">
+              <span class="nodo">Hermano/a 3</span>
+              <ul class="hijos">
+                <li><span class="nodo"><a href="JR/jr.html">J.Ramón</a></span></li>
+              </ul>
+            </li>
+            <li class="rama">
+              <span class="nodo">Hermano/a 4</span>
+              <ul class="hijos">
+                <li><span class="nodo">Primo/a</span></li>
+              </ul>
+            </li>
+            <li class="rama">
+              <span class="nodo">Hermano/a 5</span>
+              <ul class="hijos">
+                <li><span class="nodo">Primo/a</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Anécdotas: cambia los textos y nombres por los reales -->
+  <section id="anecdotas" class="anecdotas">
+    <h2>Anécdotas de los primos</h2>
+    <div class="notas">
+      <blockquote class="nota nota-amarilla">
+        <p>Aquí va la primera anécdota: un verano en el pueblo, una travesura, algo que siempre se cuenta en las reuniones.</p>
+        <footer>— Nery</footer>
+      </blockquote>
+      <blockquote class="nota nota-rosa">
+        <p>Aquí va otra historia. Puede ser corta: una frase que haga reír a todos.</p>
+        <footer>— Marife</footer>
+      </blockquote>
+      <blockquote class="nota nota-lima">
+        <p>Y aquí otra más. Cuantas más anécdotas, más se parecerá la página a una tarde de familia.</p>
+        <footer>— J.Ramón</footer>
+      </blockquote>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>Hecho con amor por la familia 💕</p>
+</footer>
+
+</body>
+</html>

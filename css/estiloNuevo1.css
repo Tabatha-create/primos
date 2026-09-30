@@ -1,0 +1,281 @@
+/* =========================================================
+   Galería Creativa Familiar
+   Paleta: atardecer en la playa de Valle Gran Rey
+   (mar en penumbra, oro, coral, rosa, arena y palmeras)
+   Sirve para la portada y para las páginas de cada primo.
+   ========================================================= */
+:root {
+  --arena: #F4E9D8;          /* fondo: arena cálida, sin brillo */
+  --crema: #FAF2E4;          /* tarjetas y marcos */
+  --noche: #27405F;          /* mar al anochecer */
+  --noche-oscuro: #1B2D45;
+  --mar: #24707A;            /* verde mar, para enlaces y títulos */
+  --oro: #E4B04E;
+  --rosa: #D98496;
+  --melocoton: #EE9F6C;
+  --coral: #E07A5F;
+  --palma: #86A97A;
+  --malva: #B79CC4;
+  --tierra: #A85F45;         /* líneas del árbol */
+  --tinta: #33231F;          /* texto */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: linear-gradient(180deg, #F6ECDD 0%, #F0E0CB 100%) fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; line-height: 1.15; color: var(--tinta); }
+a { color: var(--mar); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--noche); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- Cabecera: la foto de hoy, con luz de atardecer ---------- */
+header.cabecera-comun {
+  position: relative;
+  height: 60vh;
+  min-height: 460px;
+  max-height: 800px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  padding-top: 2.5rem;
+  background: var(--noche);
+}
+header.cabecera-comun::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/valle-gran-rey-hoy.jpg") center 70% / cover no-repeat;
+  filter: saturate(.85) brightness(.92);
+  z-index: 1;
+}
+/* luz de atardecer: noche arriba, rosa y oro hacia abajo, y una ola de mar al pie */
+header.cabecera-comun::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z' fill='%2327405F'/%3E%3C/svg%3E") bottom / 100% 46px no-repeat,
+    linear-gradient(180deg,
+      rgba(39, 64, 95, .70) 0%,
+      rgba(154, 90, 120, .40) 40%,
+      rgba(238, 159, 108, .30) 75%,
+      rgba(224, 122, 95, .20) 100%);
+  z-index: 2;
+}
+header.cabecera-comun .header-content { position: relative; z-index: 4; padding: 1rem 1.5rem; text-shadow: 0 2px 12px rgba(20, 30, 50, .6); }
+header.cabecera-comun h1 { color: #FFF6E6; font-size: clamp(2rem, 6vw, 3.6rem); margin-bottom: .4rem; }
+header.cabecera-comun p { color: #FFF6E6; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 600; }
+
+header.cabecera-comun img.logo {
+  width: 90px; height: 90px; border-radius: 50%;
+  border: 3px solid var(--crema);
+  background: var(--crema);
+  margin-bottom: 1rem;
+}
+
+/* Fotos redondas decorativas (con sus colores reales) */
+header.cabecera-comun .imagen-decorativa {
+  position: absolute;
+  width: 80px; height: 80px;
+  background-size: cover; background-position: center;
+  border-radius: 50%;
+  border: 3px solid var(--crema);
+  box-shadow: 0 4px 12px rgba(20, 30, 50, .4);
+  z-index: 3;
+  transition: transform .3s ease;
+}
+header.cabecera-comun .imagen-decorativa.top-left     { top: 10%;    left: 8%;  background-image: url("../img/imagen1.jpg"); }
+header.cabecera-comun .imagen-decorativa.top-right    { top: 10%;    right: 8%; background-image: url("../img/imagen2.jpg"); }
+header.cabecera-comun .imagen-decorativa.bottom-left  { bottom: 10%; left: 8%;  background-image: url("../img/imagen3.jpg"); }
+header.cabecera-comun .imagen-decorativa.bottom-right { bottom: 10%; right: 8%; background-image: url("../img/imagen4.jpg"); }
+header.cabecera-comun .imagen-decorativa.middle-left  { top: 50%; left: 5%;  transform: translateY(-50%); background-image: url("../img/imagen5.jpg"); }
+header.cabecera-comun .imagen-decorativa.middle-right { top: 50%; right: 5%; transform: translateY(-50%); background-image: url("../img/imagen6.jpg"); }
+header.cabecera-comun .imagen-decorativa:hover { transform: scale(1.1); }
+header.cabecera-comun .imagen-decorativa.middle-left:hover,
+header.cabecera-comun .imagen-decorativa.middle-right:hover { transform: translateY(-50%) scale(1.1); }
+
+/* ---------- Navegación: el mar continúa la ola de la cabecera ---------- */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--noche);
+  border-bottom: 3px solid var(--coral);
+  padding: .5rem 0;
+}
+nav ul { display: flex; flex-wrap: wrap; justify-content: center; list-style: none; gap: .25rem .5rem; padding: 0 1rem; }
+nav a {
+  display: block; padding: .4rem 1rem; border-radius: 999px;
+  color: #FAF2E4; font-weight: 700; text-decoration: none;
+}
+nav a:hover { background: rgba(250, 242, 228, .16); }
+nav a:focus-visible { outline-color: #FAF2E4; }
+
+/* ---------- Contenido ---------- */
+main { padding: 2rem 1rem; }
+section { margin-bottom: 2rem; scroll-margin-top: 4rem; }
+
+.tarjeta {
+  background: var(--crema);
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(90, 50, 30, .18);
+  max-width: 500px;
+  margin: 1.5rem auto;
+  border: 2px solid rgba(228, 176, 78, .7);
+}
+.tarjeta h2 { margin-bottom: 1rem; }
+
+/* ---------- Galería de obras (páginas internas) ---------- */
+.galeria { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.galeria img {
+  width: 220px; height: auto;
+  border-radius: 8px;
+  border: 5px solid var(--crema);
+  box-shadow: 0 6px 16px rgba(90, 50, 30, .25);
+  transition: transform .25s ease;
+}
+.galeria img:hover { transform: scale(1.05) rotate(1deg); }
+
+/* ---------- Pie: el mar de noche ---------- */
+body > footer, .pie {
+  background: linear-gradient(180deg, var(--noche), var(--noche-oscuro));
+  color: #FAF2E4;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  border-top: 3px solid var(--coral);
+}
+
+/* ---------- Botones ---------- */
+button, .boton {
+  background: var(--noche);
+  color: #FAF2E4;
+  border: 0;
+  padding: .7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(27, 45, 69, .35);
+  transition: background .2s ease;
+}
+button:hover, .boton:hover { background: var(--mar); }
+
+/* =========================================================
+   Solo la portada (body class="portada")
+   ========================================================= */
+.portada main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+.intro { max-width: 60ch; margin: 0 auto 1.5rem; }
+.primos-seccion h2, .historia h2, .arbol-seccion h2, .anecdotas h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0 0 .5rem; color: var(--noche);
+}
+
+/* Los primos: una casita por cada uno, en una cuadrícula que crece sola */
+.primos-seccion { text-align: center; margin-bottom: 4rem; }
+.primos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.casita {
+  background: linear-gradient(160deg, #EFC76A, #E3A048);
+  border-radius: 20px 20px 12px 12px;
+  border-bottom: 8px solid rgba(90, 50, 30, .25);
+  box-shadow: 0 8px 18px rgba(90, 50, 30, .22), inset 0 1px 0 rgba(255, 255, 255, .3);
+  padding: 1.1rem 1.25rem 1.25rem;
+  margin: 0;
+}
+.casita:nth-child(4n+2) { background: linear-gradient(160deg, #EBA0AC, #D27A8E); }
+.casita:nth-child(4n+3) { background: linear-gradient(160deg, #F2AE80, #E27E5E); }
+.casita:nth-child(4n+4) { background: linear-gradient(160deg, #A9C79A, #6FA48E); }
+@media (min-width: 560px) { .casita:nth-child(even) { margin-top: 1.5rem; } }
+.casita .oficio { font-weight: 700; font-size: .95rem; margin-bottom: .35rem; }
+.casita h3 { font-size: 1.7rem; margin-bottom: .35rem; color: #2A1B17; }
+.casita h3 a { color: #2A1B17; text-decoration: none; }
+.casita h3 a:hover { text-decoration: underline; }
+.casita p { margin: 0 0 .6rem; color: #2A1B17; }
+.casita .ver { color: #2A1B17; font-weight: 700; }
+
+/* Antes y ahora */
+.historia { text-align: center; margin-bottom: 4rem; }
+.antes-ahora { display: grid; gap: 1.25rem; }
+@media (min-width: 700px) { .antes-ahora { grid-template-columns: 1fr 1fr; } }
+.antes-ahora figure { background: var(--crema); padding: .6rem .6rem .25rem; border-radius: 6px; box-shadow: 0 8px 18px rgba(90, 50, 30, .25); }
+.antes-ahora figure:first-child { transform: rotate(-1.5deg); }
+.antes-ahora figure:last-child  { transform: rotate(1.5deg); }
+.antes-ahora img { display: block; width: 100%; height: 260px; object-fit: cover; border-radius: 3px; }
+.antes-ahora figure:first-child img { filter: grayscale(1) contrast(1.05); }
+.antes-ahora figcaption { font-family: "Fredoka", sans-serif; font-size: 1.25rem; padding: .4rem 0; }
+
+/* Árbol genealógico */
+.arbol-seccion { text-align: center; margin-bottom: 4rem; }
+.arbol ul { list-style: none; }
+.nodo {
+  display: inline-block;
+  padding: .35rem .95rem;
+  border-radius: 999px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  background: var(--crema);
+  border: 2px solid rgba(51, 35, 31, .18);
+  box-shadow: 0 2px 6px rgba(90, 50, 30, .15);
+}
+.nodo a { color: var(--tinta); text-decoration: none; }
+.nodo a:hover { text-decoration: underline; }
+.nodo-raiz { background: linear-gradient(180deg, var(--noche), var(--noche-oscuro)); color: #FAF2E4; border-color: var(--noche-oscuro); font-size: 1.15rem; }
+.rama > .nodo { border-color: transparent; }
+.rama:nth-child(5n+1) > .nodo { background: linear-gradient(160deg, #EFC76A, #E3A048); }
+.rama:nth-child(5n+2) > .nodo { background: linear-gradient(160deg, #EBA0AC, #D27A8E); }
+.rama:nth-child(5n+3) > .nodo { background: linear-gradient(160deg, #F2AE80, #E27E5E); }
+.rama:nth-child(5n+4) > .nodo { background: linear-gradient(160deg, #A9C79A, #6FA48E); }
+.rama:nth-child(5n+5) > .nodo { background: linear-gradient(160deg, #C9B4D3, #A488B4); }
+.hijos li { margin-top: .5rem; }
+
+/* Móvil: árbol vertical con línea a la izquierda */
+.ramas { margin: .75rem 0 0 1rem; padding-left: 1rem; border-left: 3px solid var(--tierra); text-align: left; }
+.rama { margin-top: .9rem; }
+.hijos { margin-left: 1.25rem; padding-left: .75rem; border-left: 2px dotted var(--tierra); }
+
+/* Pantalla ancha: árbol horizontal con ramas */
+@media (min-width: 800px) {
+  .ramas, .hijos { border: 0; margin: 0; padding: 0; }
+  .ramas { display: flex; justify-content: center; position: relative; padding-top: 1.5rem; text-align: center; }
+  .ramas::before { content: ""; position: absolute; top: 0; left: 50%; height: 1.5rem; border-left: 3px solid var(--tierra); }
+  .rama { position: relative; padding: 1.5rem .5rem 0; margin: 0; }
+  .rama::before, .rama::after { content: ""; position: absolute; top: 0; right: 50%; width: 50%; height: 1.5rem; border-top: 3px solid var(--tierra); }
+  .rama::after { right: auto; left: 50%; border-left: 3px solid var(--tierra); }
+  .rama:first-child::before, .rama:last-child::after { border: 0; }
+  .rama:last-child::before { border-right: 3px solid var(--tierra); border-radius: 0 10px 0 0; }
+  .rama:first-child::after { border-radius: 10px 0 0 0; }
+  .hijos { margin-top: .25rem; }
+  .hijos li { margin-top: .5rem; }
+}
+
+/* Anécdotas */
+.anecdotas { text-align: center; margin-bottom: 3rem; }
+.notas { display: grid; gap: 1.25rem; margin-top: 1.5rem; text-align: left; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.nota { padding: 1.25rem; border-radius: 6px 6px 18px 6px; box-shadow: 0 6px 14px rgba(90, 50, 30, .22); color: #2A1B17; }
+.nota p { margin: 0 0 .75rem; }
+.nota footer { font-family: "Fredoka", sans-serif; font-size: 1.1rem; }
+.nota-amarilla { background: linear-gradient(160deg, #EFC76A, #E3A048); transform: rotate(-1deg); }
+.nota-rosa     { background: linear-gradient(160deg, #EBA0AC, #D27A8E); transform: rotate(1deg); }
+.nota-lima     { background: linear-gradient(160deg, #A9C79A, #6FA48E); transform: rotate(-.5deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
