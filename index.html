@@ -4,20 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galería Creativa Familiar</title>
-  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/otroestilo.css" />
 </head>
-<body>
-<header class="cabecera-comun">
-  <!-- Imágenes decorativas pequeñas -->
-  <div class="imagen-decorativa top-left"></div>
-  <div class="imagen-decorativa top-right"></div>
-  <div class="imagen-decorativa middle-left"></div>
-  <div class="imagen-decorativa middle-right"></div>
-  <div class="imagen-decorativa bottom-left"></div>
-  <div class="imagen-decorativa bottom-right"></div>
+<body class="portada">
 
+<header class="cabecera-comun">
   <div class="header-content">
-    <br><br>
+    <h1>Galería Creativa de los Primos</h1>
     <p>La inspiración nace en Valle Gran Rey</p>
   </div>
 </header>
@@ -25,42 +21,147 @@
 <nav>
   <ul>
     <li><a href="#historia">Historia</a></li>
-    <li><a href="#ceramica">Nery</a></li>
-    <li><a href="#manualidades">Marife</a></li>
-    <li><a href="#madera">J.Ramón</a></li>
+    <li><a href="#arbol">Nuestro árbol</a></li>
+    <li><a href="#primos">Los primos</a></li>
+    <li><a href="#anecdotas">Anécdotas y Fotos</a></li>
   </ul>
 </nav>
 
 <main>
-    <h1>Galería Creativa de los Primos</h1>
-    <section id="ceramica">
-      <h2>🪴 Cerámica</h2>
-      <div class="tarjeta">
+  <!-- Antes y ahora -->
+  <section id="historia" class="historia">
+    <h2>De aquí salieron nuestros padres</h2>
+    <p class="intro">La Calera, Valle Gran Rey, La Gomera. Ha cambiado de colores, pero sigue siendo nuestro lugar.</p>
+    <div class="antes-ahora">
+      <figure>
+        <img src="img/laCalera-1955.jpg" alt="La Calera en 1955, en blanco y negro" loading="lazy">
+        <figcaption>1955</figcaption>
+      </figure>
+      <figure>
+        <img src="img/LaCalera2026.jpeg" alt="La Calera hoy, con casas de colores y palmeras" loading="lazy">
+        <figcaption>Hoy</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="arbol" class="arbol-seccion">
+    <h2>Nuestro árbol</h2>
+    <p class="intro">De una casa de La Calera salieron cinco ramas.</p>
+    <div class="arbol">
+      <ul class="raiz">
+        <li>
+          <span class="persona persona-raiz"><img class="foto foto-raiz" src="img/abuelos.jpg" alt="Foto de los abuelos"><span class="nombre">Abuelo y Abuela</span></span>
+          <ul class="ramas">
+
+            <li class="rama">
+              <span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">José</span></span>
+              <ul class="hijos">
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre"><a href="Marife/marife.html">Marife</a></span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre"><a href="JR/jr.html">J.Ramón</a></span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Eva</span></span></li>
+              </ul>
+            </li>
+
+            <li class="rama">
+              <span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Luis</span></span>
+              <ul class="hijos">
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Luis</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Freddy</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre"><a href="Nery/nery.html">Nery</a></span></span></li>
+              </ul>
+            </li>
+
+            <li class="rama">
+              <span class="persona"><img class="foto" src="img/tioEladio.jpg" alt="Tio Eladio"><span class="nombre">Eladio</span></span>
+              <ul class="hijos">
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Ana</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Nieves</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Yayo</span></span></li>
+              </ul>
+            </li>
+
+            <li class="rama">
+              <span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Reynalda</span></span>
+              <ul class="hijos">
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Manolo</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Lupe</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Ronald</span></span></li>
+              </ul>
+            </li>
+
+            <li class="rama">
+              <span class="persona"><img class="foto" src="img/tiaTona.jpg" alt="Tio Toña"><span class="nombre">Toña</span></span>
+              <ul class="hijos">
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Julio</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Germán</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Mario</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Cheita</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Ismael</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Esmeralda</span></span></li>
+                <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Margarita</span></span></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Los primos: una casita por cada uno. Para añadir uno, copia un bloque <article> completo.
+       Los colores se reparten solos (amarillo, rosa, durazno, lima). -->
+  <section id="primos" class="primos-seccion">
+    <h2>Los primos</h2>
+    <p class="intro">Cada uno con lo suyo. Entra en su casita y mira lo que hace.</p>
+    <div class="primos">
+
+      <article class="casita" id="nery">
+        <p class="oficio">🪴 Cerámica</p>
         <h3><a href="Nery/nery.html">Nery</a></h3>
-        <p>Artista ceramista con un estilo natural y sensible. Ver su obra →</p>
-      </div>
-    </section>
+        <p>Artista ceramista con un estilo natural y sensible.</p>
+        <a class="ver" href="Nery/nery.html">Ver su obra →</a>
+      </article>
 
-    <section id="manualidades">
-      <h2>🎊 Piñatas y Filigranas</h2>
-      <div class="tarjeta">
+      <article class="casita" id="marife">
+        <p class="oficio">🎊 Piñatas y filigranas</p>
         <h3><a href="Marife/marife.html">Marife</a></h3>
-        <p>Artesana de piñatas, filigranas y bisutería. Explorar →</p>
-      </div>
-    </section>
+        <p>Artesana de piñatas, filigranas y bisutería.</p>
+        <a class="ver" href="Marife/marife.html">Explorar →</a>
+      </article>
 
-    <section id="madera">
-      <h2>🪵 Madera</h2>
-      <div class="tarjeta">
+      <article class="casita" id="jramon">
+        <p class="oficio">🪵 Madera</p>
         <h3><a href="JR/jr.html">J.Ramón</a></h3>
-        <p>Creador: coches, juguetes de madera, portamóviles. Explorar →</p>
-      </div>
-    </section>
-  </main>
+        <p>Creador: coches, juguetes de madera, portamóviles.</p>
+        <a class="ver" href="JR/jr.html">Explorar →</a>
+      </article>
 
-  <footer>
-    <p>Hecho con amor por la familia 💕</p>
+    </div>
+  </section>
 
-  </footer>
+  <!-- Anécdotas: cambia los textos y nombres por los reales -->
+  <section id="anecdotas" class="anecdotas">
+    <h2>Anécdotas y Fotos de los primos</h2>
+    <div class="notas">
+      <blockquote class="nota nota-amarilla">
+        <p>Aquí va la primera anécdota: un verano en el pueblo, una travesura, algo que siempre se cuenta en las reuniones.</p>
+        <footer>— Nery</footer>
+      </blockquote>
+      <blockquote class="nota nota-rosa">
+        <p>Aquí va otra historia. Puede ser corta: una frase que haga reír a todos.</p>
+        <footer>— Marife</footer>
+      </blockquote>
+      <blockquote class="nota nota-lima">
+        <p>Y aquí otra más. Cuantas más anécdotas, más se parecerá la página a una tarde de familia.</p>
+        <footer>— J.Ramón</footer>
+      </blockquote>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>Hecho con amor por la familia 💕</p>
+</footer>
+
 </body>
 </html>
