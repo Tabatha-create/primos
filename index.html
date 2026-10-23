@@ -50,11 +50,11 @@
     <div class="arbol">
       <ul class="raiz">
         <li>
-          <span class="persona persona-raiz"><img class="foto foto-raiz" src="img/abuelos.jpg" alt="Foto de los abuelos"><span class="nombre">Abuelo y Abuela</span></span>
+          <span class="persona persona-raiz"><img class="foto foto-raiz" src="img/abuelos.jpg" alt="Foto de los abuelos"><span class="nombre">Guadalupe y José</span></span>
           <ul class="ramas">
 
             <li class="rama">
-              <span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">José</span></span>
+              <span class="persona"><img class="foto" src="img/Papa.jpg" alt="Tio Eladio"><span class="nombre">José</span></span>
               <ul class="hijos">
                 <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre"><a href="Marife/marife.html">Marife</a></span></span></li>
                 <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre"><a href="JR/jr.html">J.Ramón</a></span></span></li>
@@ -63,7 +63,7 @@
             </li>
 
             <li class="rama">
-              <span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Luis</span></span>
+              <span class="persona"><img class="foto" src="img/tioLuis.jpg" alt="Tio Eladio"><span class="nombre">Luis</span></span>
               <ul class="hijos">
                 <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Luis</span></span></li>
                 <li><span class="persona"><span class="foto foto-vacia" aria-hidden="true">＋</span><span class="nombre">Freddy</span></span></li>
@@ -156,12 +156,65 @@
         <footer>— J.Ramón</footer>
       </blockquote>
     </div>
+
+  <div class="fotos-primos">
+    <h3>Veranos en la playa</h3>
+    <p class="ayuda">Desliza para ver más. Toca una foto para ampliarla.</p>
+    <div class="carrusel">
+      <button class="carrusel-btn prev" type="button" aria-label="Fotos anteriores">‹</button>
+      <div class="carrusel-pista" tabindex="0" role="region" aria-label="Veranos en la playa">
+
+      <figure class="diapo">
+        <button class="diapo-abrir" type="button" aria-label="Ampliar foto"><img src="img/primos/playa1.jpg" alt="Primos en la playa" loading="lazy"></button>
+        <figcaption>Un día de playa</figcaption>
+      </figure>
+      <figure class="diapo">
+        <button class="diapo-abrir" type="button" aria-label="Ampliar foto"><img src="img/primos/playa2.jpg" alt="Primos jugando en la arena" loading="lazy"></button>
+        <figcaption>Jugando en la arena</figcaption>
+      </figure>
+      <figure class="diapo">
+        <button class="diapo-abrir" type="button" aria-label="Ampliar foto"><img src="img/primos/playa3.jpg" alt="Primos al atardecer" loading="lazy"></button>
+        <figcaption>Atardecer</figcaption>
+      </figure>
+      <!-- copia aquí más bloques <figure class="diapo"> -->
+    </div>
+    <button class="carrusel-btn next" type="button" aria-label="Fotos siguientes">›</button>
+  </div>
+</div>
+
+<div class="fotos-primos">
+  <h3>Fiestas y reuniones</h3>
+  <p class="ayuda">Desliza para ver más. Toca una foto para ampliarla.</p>
+  <div class="carrusel">
+    <button class="carrusel-btn prev" type="button" aria-label="Fotos anteriores">‹</button>
+    <div class="carrusel-pista" tabindex="0" role="region" aria-label="Fiestas y reuniones">
+
+      <figure class="diapo">
+        <button class="diapo-abrir" type="button" aria-label="Ampliar foto"><img src="img/primos/fiesta1.jpg" alt="Fiesta familiar" loading="lazy"></button>
+        <figcaption>Fiesta en La Calera</figcaption>
+      </figure>
+      <!-- más fotos aquí -->
+
+    </div>
+    <button class="carrusel-btn next" type="button" aria-label="Fotos siguientes">›</button>
+  </div>
+</div>  
   </section>
 </main>
 
 <footer class="pie">
   <p>Hecho con amor por la familia 💕</p>
 </footer>
+<dialog class="visor" aria-label="Foto ampliada">
+  <button class="visor-cerrar" type="button" aria-label="Cerrar">✕</button>
+  <button class="visor-btn prev" type="button" aria-label="Foto anterior">‹</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button class="visor-btn next" type="button" aria-label="Foto siguiente">›</button>
+</dialog>
 
+<script src="js/carrusel.js"></script>
 </body>
 </html>
